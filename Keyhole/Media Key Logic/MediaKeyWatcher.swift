@@ -30,7 +30,7 @@ final class MediaKeyWatcher {
 
     // MARK: - API
 
-    enum State {
+    enum State: Hashable, Equatable {
         case stopped
         case missingAccessibilityPermissions
         case running

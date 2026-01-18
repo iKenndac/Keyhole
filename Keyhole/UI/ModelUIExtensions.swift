@@ -10,3 +10,7 @@ extension TargetNotRunningAction {
         }
     }
 }
+
+extension MediaKeyController.MediaAppDetailsWithState: Identifiable {
+    var id: Self { return self }
+}

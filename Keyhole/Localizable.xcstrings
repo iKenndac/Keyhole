@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "AccessibilityPermissionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility"
+          }
+        }
+      }
+    },
     "AppInfo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -24,6 +35,28 @@
         }
       }
     },
+    "AutomationPermissionNotRunningTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$(appName)@ is not running"
+          }
+        }
+      }
+    },
+    "AutomationPermissionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automation for the %1$(appName)@ app"
+          }
+        }
+      }
+    },
     "EnableKeyholeSettingTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -31,6 +64,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enable Keyhole"
+          }
+        }
+      }
+    },
+    "PermissionsSectionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permissions"
           }
         }
       }
@@ -63,7 +107,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Launch Music"
+            "value" : "Launch the Music app"
           }
         }
       }
@@ -74,7 +118,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Perform the System Default Action"
+            "value" : "Perform the system default action"
           }
         }
       }
@@ -96,7 +140,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Do Nothing"
+            "value" : "Do nothing"
           }
         }
       }

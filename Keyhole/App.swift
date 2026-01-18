@@ -9,8 +9,20 @@ struct KeyholeApp: App {
         controller = MediaKeyController()
     }
 
+    var menuBarImageName: String {
+        if controller.enabled {
+            if controller.hasPermissionsProblem {
+                return "exclamationmark.triangle.fill"
+            } else {
+                return "play.fill"
+            }
+        } else {
+            return "play.slash.fill"
+        }
+    }
+
     var body: some Scene {
-        MenuBarExtra(.appName, systemImage: controller.enabled ? "play.fill" : "play.slash.fill") {
+        MenuBarExtra(.appName, systemImage: menuBarImageName) {
             SettingsView(controller: controller)
                 .frame(maxHeight: .infinity)
         }

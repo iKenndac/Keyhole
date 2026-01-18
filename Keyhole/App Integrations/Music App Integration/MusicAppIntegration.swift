@@ -1,13 +1,16 @@
 import Foundation
 import Observation
 
-@MainActor @Observable class MusicAppIntegration: MediaAppIntegration {
+@MainActor @Observable class MusicAppIntegration: MediaAppIntegration, AppStateObservationDefaultImplementations {
 
-    private let bundleId: String = "com.apple.Music"
+    static let bundleId: String = "com.apple.Music"
+    var bundleId: String { return Self.bundleId }
+    var appName: String = "Music" // Localised?
+
     private let musicBridge: ScriptingBridgeSession<MusicApplication>
 
     init() {
-        musicBridge = .init(bundleId: bundleId)
+        musicBridge = .init(bundleId: Self.bundleId)
         stateObserver = musicBridge.addStateObserver { [weak self] _, state in
             self?.updateAppState(with: state)
         }
@@ -67,8 +70,11 @@ import Observation
 
     // MARK: - State Observation
 
+    var appStateChangedObserverStorage: [MediaAppStateObservationToken: MediaAppStateChangedObserver] = [:]
     private var stateObserver: ScriptingBridgeSession<MusicApplication>.ObserverToken? = nil
-    private(set) var appState: MediaAppState = .notRunning
+    private(set) var appState: MediaAppState = .notRunning {
+        didSet { triggerStateChangedObservers(with: appState) }
+    }
 
     private func updateAppState(with sessionState: ScriptingBridgeSession<MusicApplication>.State) {
         switch sessionState {

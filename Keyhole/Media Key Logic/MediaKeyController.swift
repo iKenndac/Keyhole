@@ -1,5 +1,6 @@
 import Foundation
-import Combine
+import AppKit
+import ApplicationServices
 
 enum TargetNotRunningAction: String, CaseIterable, Equatable, Hashable, Identifiable {
     case swallowEvent
@@ -30,7 +31,7 @@ extension UserDefaultsKey {
 }
 
 /// Central class for the app's core logic - taking media key presses and passing them along to a target application.
-@MainActor @Observable class MediaKeyController {
+@Observable class MediaKeyController {
 
     private let keyWatcher: MediaKeyWatcher
     private let integrations: [any MediaAppIntegration]
@@ -42,40 +43,99 @@ extension UserDefaultsKey {
         enabled = UserDefaults.standard.value(for: .mediaKeyListeningEnabled)
         keyWatcher = MediaKeyWatcher()
         keyWatcher.keyHandler = handleMediaKey
-        if enabled { try? keyWatcher.start() }
+        updateAccessibilityState()
+        setupObservations()
+        updateAppStates()
+        startKeyHandlingIfEnabled()
     }
 
+    deinit {
+        if let appBecameActiveToken { NotificationCenter.default.removeObserver(appBecameActiveToken) }
+    }
+
+    /// What should happen if a media key is pressed and the target app isn't running?
     var targetNotRunningAction: TargetNotRunningAction {
         didSet { UserDefaults.standard.setValue(targetNotRunningAction, for: .targetNotRunningAction) }
     }
 
+    /// Set to `true` to enable media key listening, or `false` to stop it.
     var enabled: Bool {
         didSet {
             UserDefaults.standard.setValue(enabled, for: .mediaKeyListeningEnabled)
-            if enabled {
-                try? keyWatcher.start()
-            } else {
-                keyWatcher.stop()
-            }
+            if enabled { startKeyHandlingIfEnabled() }
+            else { keyWatcher.stop() }
         }
     }
 
-    func showAutomationDeniedAlert() {
-        // TODO: Mechanism for not showing it again for a bit.
+    /// Returns `true` if the app has accessibility permissions, otherwise `false`.
+    private(set) var hasAccessibilityPermission: Bool = false
+
+    struct MediaAppDetailsWithState: Equatable, Hashable {
+        let bundleId: String
+        let appName: String
+        let state: MediaAppState
+    }
+
+    /// Returns the current automation states for the supported app integrations.
+    private(set) var appStates: [MediaAppDetailsWithState] = []
+    
+    /// Returns `true` if there's a permissions problem somewhere. Useful for a general "!!!" alert.
+    private(set) var hasPermissionsProblem: Bool = false
+
+    // MARK: - Permission & State Observing
+
+    private var appBecameActiveToken: Any? = nil
+    private var appStateTokens: [MediaAppStateObservationToken] = []
+
+    private func setupObservations() {
+        let becameActiveNotification = NSApplication.didBecomeActiveNotification
+        let center = NotificationCenter.default
+        appBecameActiveToken = center.addObserver(forName: becameActiveNotification, object: nil, queue: .main) { [weak self] _ in
+            self?.updateAccessibilityState()
+        }
+
+        // The Observation framework makes it very hard to continuously observe things manually :/
+        appStateTokens = integrations.map({ $0.addStateObserver({ [weak self] _, _ in self?.updateAppStates() }) })
+    }
+
+    func updateAccessibilityState() {
+        hasAccessibilityPermission = AXIsProcessTrusted()
+        updateHasPermissionsProblemFromCachedProperties()
+        startKeyHandlingIfEnabled()
+    }
+
+    private func updateAppStates() {
+        appStates = integrations.map({
+            MediaAppDetailsWithState(bundleId: $0.bundleId, appName: $0.appName, state: $0.appState)
+        })
+        updateHasPermissionsProblemFromCachedProperties()
+    }
+
+    private func updateHasPermissionsProblemFromCachedProperties() {
+        let hasProblematicApp: Bool = integrations.contains(where: { $0.appState == .runningWithDeniedAutomationAccess })
+        hasPermissionsProblem = (!hasAccessibilityPermission || hasProblematicApp)
     }
 
     // MARK: - Key Handling Logic
 
+    private func startKeyHandlingIfEnabled() {
+        guard enabled else { return }
+        do { try keyWatcher.start() }
+        catch { NSLog("Unable to start key handler with error: \(error)") }
+    }
+
     private func attemptToGainPermissionToAutomate(_ app: any MediaAppIntegration) {
         Task { @MainActor in
             do { try await app.launchApplication(askingForAutomationPermission: true) }
-            catch { showAutomationDeniedAlert() }
+            catch { }
         }
     }
 
     private func handleMediaKey(from watcher: MediaKeyWatcher, key: MediaKey, isDown: Bool) -> MediaKeyHandlingResult {
         // Right now, only deal with key downs.
         guard isDown else { return .blockEventPropagation }
+
+        print("I am handling a key!")
 
         guard let target = integrations.first(where: { $0.appState.appIsRunning }) else {
             switch targetNotRunningAction {
@@ -95,7 +155,6 @@ extension UserDefaultsKey {
         }
 
         guard target.appState == .runningWithAutomationAccess else {
-            showAutomationDeniedAlert()
             return .blockEventPropagation
         }
 
@@ -108,7 +167,7 @@ extension UserDefaultsKey {
             case .rewind: break
             }
         } catch {
-            showAutomationDeniedAlert()
+            // TODO: Log something.
         }
 
         return .blockEventPropagation
