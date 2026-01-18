@@ -1,0 +1,62 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "AppName" : {
+      "comment" : "Don’t localise.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole"
+          }
+        }
+      }
+    },
+    "TargetNotRunningLaunchTargetTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Launch Music"
+          }
+        }
+      }
+    },
+    "TargetNotRunningPropagateEventTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perform System Default Action"
+          }
+        }
+      }
+    },
+    "TargetNotRunningSettingTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If the Music app isn’t running when a media key is pressed: "
+          }
+        }
+      }
+    },
+    "TargetNotRunningSwallowEventTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do Nothing"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

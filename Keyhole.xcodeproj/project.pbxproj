@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D12F1D092B000E5F7D /* MediaKeyController.swift */; };
+		50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */; };
+		50C768DA2F1D092B000E5F7D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D42F1D092B000E5F7D /* App.swift */; };
+		50C768DB2F1D092B000E5F7D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D62F1D092B000E5F7D /* SettingsView.swift */; };
+		50C768DC2F1D092B000E5F7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C768D52F1D092B000E5F7D /* Assets.xcassets */; };
+		50C768DF2F1D0C11000E5F7D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50C768DE2F1D0C11000E5F7D /* Localizable.xcstrings */; };
+		50C768E22F1D0C4F000E5F7D /* MediaAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768E12F1D0C4A000E5F7D /* MediaAppIntegration.swift */; };
+		50C769042F1D0CB5000E5F7D /* ScriptingSwiftBridgeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C769032F1D0CB5000E5F7D /* ScriptingSwiftBridgeBase.swift */; };
+		50C769062F1D0CCB000E5F7D /* ScriptingBridgeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C769052F1D0CCB000E5F7D /* ScriptingBridgeSession.swift */; };
+		50C769092F1D0DAE000E5F7D /* MusicAppSwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C769082F1D0DAA000E5F7D /* MusicAppSwiftScriptingBridge.swift */; };
+		50C7690B2F1D111A000E5F7D /* MusicAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7690A2F1D1117000E5F7D /* MusicAppIntegration.swift */; };
+		50C769302F1D237A000E5F7D /* ModelUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7692F2F1D2375000E5F7D /* ModelUIExtensions.swift */; };
+		50C769332F1D260C000E5F7D /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C769322F1D260C000E5F7D /* UserDefaultsExtensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50C768B42F1CE7E8000E5F7D /* Keyhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C768D12F1D092B000E5F7D /* MediaKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyController.swift; sourceTree = "<group>"; };
+		50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyWatcher.swift; sourceTree = "<group>"; };
+		50C768D42F1D092B000E5F7D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		50C768D52F1D092B000E5F7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		50C768D62F1D092B000E5F7D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		50C768DE2F1D0C11000E5F7D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		50C768E12F1D0C4A000E5F7D /* MediaAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAppIntegration.swift; sourceTree = "<group>"; };
+		50C769032F1D0CB5000E5F7D /* ScriptingSwiftBridgeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptingSwiftBridgeBase.swift; sourceTree = "<group>"; };
+		50C769052F1D0CCB000E5F7D /* ScriptingBridgeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptingBridgeSession.swift; sourceTree = "<group>"; };
+		50C769072F1D0D91000E5F7D /* Music.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		50C769082F1D0DAA000E5F7D /* MusicAppSwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAppSwiftScriptingBridge.swift; sourceTree = "<group>"; };
+		50C7690A2F1D1117000E5F7D /* MusicAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAppIntegration.swift; sourceTree = "<group>"; };
+		50C769162F1D1B34000E5F7D /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
+		50C769172F1D218D000E5F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C7692D2F1D2228000E5F7D /* Shared Settings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Shared Settings.xcconfig"; sourceTree = "<group>"; };
+		50C7692F2F1D2375000E5F7D /* ModelUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUIExtensions.swift; sourceTree = "<group>"; };
+		50C769322F1D260C000E5F7D /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50C768B12F1CE7E8000E5F7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50C768AB2F1CE7E8000E5F7D = {
+			isa = PBXGroup;
+			children = (
+				50C7692D2F1D2228000E5F7D /* Shared Settings.xcconfig */,
+				50C768D72F1D092B000E5F7D /* Keyhole */,
+				50C768B52F1CE7E8000E5F7D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50C768B52F1CE7E8000E5F7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50C768B42F1CE7E8000E5F7D /* Keyhole.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50C768D32F1D092B000E5F7D /* Media Key Logic */ = {
+			isa = PBXGroup;
+			children = (
+				50C768D12F1D092B000E5F7D /* MediaKeyController.swift */,
+				50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */,
+			);
+			path = "Media Key Logic";
+			sourceTree = "<group>";
+		};
+		50C768D72F1D092B000E5F7D /* Keyhole */ = {
+			isa = PBXGroup;
+			children = (
+				50C768D42F1D092B000E5F7D /* App.swift */,
+				50C768DD2F1D0938000E5F7D /* UI */,
+				50C768D32F1D092B000E5F7D /* Media Key Logic */,
+				50C768E02F1D0C40000E5F7D /* App Integrations */,
+				50C769312F1D2602000E5F7D /* Utilities */,
+				50C768D52F1D092B000E5F7D /* Assets.xcassets */,
+				50C768DE2F1D0C11000E5F7D /* Localizable.xcstrings */,
+				50C769172F1D218D000E5F7D /* Info.plist */,
+				50C769162F1D1B34000E5F7D /* Entitlements.entitlements */,
+			);
+			path = Keyhole;
+			sourceTree = "<group>";
+		};
+		50C768DD2F1D0938000E5F7D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				50C768D62F1D092B000E5F7D /* SettingsView.swift */,
+				50C7692F2F1D2375000E5F7D /* ModelUIExtensions.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		50C768E02F1D0C40000E5F7D /* App Integrations */ = {
+			isa = PBXGroup;
+			children = (
+				50C768E12F1D0C4A000E5F7D /* MediaAppIntegration.swift */,
+				50C768E32F1D0C6B000E5F7D /* Music App Integration */,
+				50C769022F1D0CA9000E5F7D /* Scripting Bridge Helpers */,
+			);
+			path = "App Integrations";
+			sourceTree = "<group>";
+		};
+		50C768E32F1D0C6B000E5F7D /* Music App Integration */ = {
+			isa = PBXGroup;
+			children = (
+				50C769072F1D0D91000E5F7D /* Music.h */,
+				50C769082F1D0DAA000E5F7D /* MusicAppSwiftScriptingBridge.swift */,
+				50C7690A2F1D1117000E5F7D /* MusicAppIntegration.swift */,
+			);
+			path = "Music App Integration";
+			sourceTree = "<group>";
+		};
+		50C769022F1D0CA9000E5F7D /* Scripting Bridge Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				50C769032F1D0CB5000E5F7D /* ScriptingSwiftBridgeBase.swift */,
+				50C769052F1D0CCB000E5F7D /* ScriptingBridgeSession.swift */,
+			);
+			path = "Scripting Bridge Helpers";
+			sourceTree = "<group>";
+		};
+		50C769312F1D2602000E5F7D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				50C769322F1D260C000E5F7D /* UserDefaultsExtensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50C768B32F1CE7E8000E5F7D /* Keyhole */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50C768BF2F1CE7E9000E5F7D /* Build configuration list for PBXNativeTarget "Keyhole" */;
+			buildPhases = (
+				50C768B02F1CE7E8000E5F7D /* Sources */,
+				50C768B12F1CE7E8000E5F7D /* Frameworks */,
+				50C768B22F1CE7E8000E5F7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keyhole;
+			packageProductDependencies = (
+			);
+			productName = MediaKeyMadness;
+			productReference = 50C768B42F1CE7E8000E5F7D /* Keyhole.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50C768AC2F1CE7E8000E5F7D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					50C768B32F1CE7E8000E5F7D = {
+						CreatedOnToolsVersion = 26.2;
+					};
+				};
+			};
+			buildConfigurationList = 50C768AF2F1CE7E8000E5F7D /* Build configuration list for PBXProject "Keyhole" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 50C768AB2F1CE7E8000E5F7D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 50C768B52F1CE7E8000E5F7D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50C768B32F1CE7E8000E5F7D /* Keyhole */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50C768B22F1CE7E8000E5F7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C768DF2F1D0C11000E5F7D /* Localizable.xcstrings in Resources */,
+				50C768DC2F1D092B000E5F7D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50C768B02F1CE7E8000E5F7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50C769092F1D0DAE000E5F7D /* MusicAppSwiftScriptingBridge.swift in Sources */,
+				50C769302F1D237A000E5F7D /* ModelUIExtensions.swift in Sources */,
+				50C768E22F1D0C4F000E5F7D /* MediaAppIntegration.swift in Sources */,
+				50C769062F1D0CCB000E5F7D /* ScriptingBridgeSession.swift in Sources */,
+				50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */,
+				50C769332F1D260C000E5F7D /* UserDefaultsExtensions.swift in Sources */,
+				50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */,
+				50C768DA2F1D092B000E5F7D /* App.swift in Sources */,
+				50C768DB2F1D092B000E5F7D /* SettingsView.swift in Sources */,
+				50C769042F1D0CB5000E5F7D /* ScriptingSwiftBridgeBase.swift in Sources */,
+				50C7690B2F1D111A000E5F7D /* MusicAppIntegration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		50C768BD2F1CE7E9000E5F7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C7692D2F1D2228000E5F7D /* Shared Settings.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		50C768BE2F1CE7E9000E5F7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C7692D2F1D2228000E5F7D /* Shared Settings.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		50C768C02F1CE7E9000E5F7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = Keyhole/Entitlements.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				INFOPLIST_FILE = Keyhole/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.Keyhole;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		50C768C12F1CE7E9000E5F7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTOMATION_APPLE_EVENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = Keyhole/Entitlements.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RPBBKY7VG7;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				INFOPLIST_FILE = Keyhole/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.Keyhole;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
+				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
+				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
+				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
+				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
+				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50C768AF2F1CE7E8000E5F7D /* Build configuration list for PBXProject "Keyhole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C768BD2F1CE7E9000E5F7D /* Debug */,
+				50C768BE2F1CE7E9000E5F7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50C768BF2F1CE7E9000E5F7D /* Build configuration list for PBXNativeTarget "Keyhole" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50C768C02F1CE7E9000E5F7D /* Debug */,
+				50C768C12F1CE7E9000E5F7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50C768AC2F1CE7E8000E5F7D /* Project object */;
+}
