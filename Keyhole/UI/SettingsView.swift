@@ -21,6 +21,8 @@ struct SettingsView: View {
 
             Section(content: {
                 VStack(alignment: .leading, spacing: 10.0) {
+                    Toggle(.launchAtLoginSettingTitle, isOn: $controller.launchAtLogin)
+                        .toggleStyle(.checkbox)
                     Toggle(.enableKeyholeSettingTitle, isOn: $controller.enabled)
                         .toggleStyle(.checkbox)
 
@@ -79,7 +81,7 @@ struct SettingsView: View {
         .padding(.vertical, 20.0)
         .formStyle(.grouped)
         // Being a menu extra means the app doesn't come frontmost when the UI is shown, so we need to help out a bit
-        .onAppear { controller.updateAccessibilityState() }
+        .onAppear { controller.noteUIShown() }
     }
 
     private func systemImageName(for value: Bool) -> String {

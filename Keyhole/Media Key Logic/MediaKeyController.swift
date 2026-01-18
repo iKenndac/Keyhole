@@ -1,6 +1,7 @@
 import Foundation
 import AppKit
 import ApplicationServices
+import ServiceManagement
 
 enum TargetNotRunningAction: String, CaseIterable, Equatable, Hashable, Identifiable {
     case swallowEvent
@@ -46,6 +47,7 @@ extension UserDefaultsKey {
         updateAccessibilityState()
         setupObservations()
         updateAppStates()
+        updateWillLaunchAtLogin()
         startKeyHandlingIfEnabled()
     }
 
@@ -82,6 +84,28 @@ extension UserDefaultsKey {
     /// Returns `true` if there's a permissions problem somewhere. Useful for a general "!!!" alert.
     private(set) var hasPermissionsProblem: Bool = false
 
+    // MARK: - Autolaunch
+
+    /// Set to `true` to have the app open automatically at loging, or `false` to remove it from the list.
+    /// Will auto-update if the user removes it in System Settings.
+    var launchAtLogin: Bool = false {
+        didSet {
+            guard !_launchAtLoginRecursionGuard else { return }
+            do {
+                if launchAtLogin { try SMAppService.mainApp.register() }
+                else { try SMAppService.mainApp.unregister() }
+            } catch { }
+            updateWillLaunchAtLogin()
+        }
+    }
+
+    private var _launchAtLoginRecursionGuard: Bool = false
+    private func updateWillLaunchAtLogin() {
+        _launchAtLoginRecursionGuard = true
+        launchAtLogin = (SMAppService.mainApp.status == .enabled)
+        _launchAtLoginRecursionGuard = false
+    }
+
     // MARK: - Permission & State Observing
 
     private var appBecameActiveToken: Any? = nil
@@ -92,13 +116,19 @@ extension UserDefaultsKey {
         let center = NotificationCenter.default
         appBecameActiveToken = center.addObserver(forName: becameActiveNotification, object: nil, queue: .main) { [weak self] _ in
             self?.updateAccessibilityState()
+            self?.updateWillLaunchAtLogin()
         }
 
         // The Observation framework makes it very hard to continuously observe things manually :/
         appStateTokens = integrations.map({ $0.addStateObserver({ [weak self] _, _ in self?.updateAppStates() }) })
     }
 
-    func updateAccessibilityState() {
+    func noteUIShown() {
+        updateAccessibilityState()
+        updateWillLaunchAtLogin()
+    }
+
+    private func updateAccessibilityState() {
         hasAccessibilityPermission = AXIsProcessTrusted()
         updateHasPermissionsProblemFromCachedProperties()
         startKeyHandlingIfEnabled()

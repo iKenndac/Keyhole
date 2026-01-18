@@ -68,6 +68,17 @@
         }
       }
     },
+    "LaunchAtLoginSettingTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Launch at login"
+          }
+        }
+      }
+    },
     "PermissionsSectionTitle" : {
       "extractionState" : "manual",
       "localizations" : {
