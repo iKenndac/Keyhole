@@ -24,6 +24,9 @@ extension UserDefaultsKey {
     static var targetNotRunningAction: UserDefaultsKey<TargetNotRunningAction> {
         .init("TargetNotRunningAction", defaultValue: .propagateEvent)
     }
+    static var mediaKeyListeningEnabled: UserDefaultsKey<Bool> {
+        .init("MediaKeyHandlingEnabled", defaultValue: true)
+    }
 }
 
 /// Central class for the app's core logic - taking media key presses and passing them along to a target application.
@@ -36,13 +39,25 @@ extension UserDefaultsKey {
         // Only one for now, but literally the first ticket will be "But Spotify????", so might as well design for it.
         integrations = [MusicAppIntegration()]
         targetNotRunningAction = UserDefaults.standard.value(for: .targetNotRunningAction)
+        enabled = UserDefaults.standard.value(for: .mediaKeyListeningEnabled)
         keyWatcher = MediaKeyWatcher()
         keyWatcher.keyHandler = handleMediaKey
-        try? keyWatcher.start()
+        if enabled { try? keyWatcher.start() }
     }
 
     var targetNotRunningAction: TargetNotRunningAction {
         didSet { UserDefaults.standard.setValue(targetNotRunningAction, for: .targetNotRunningAction) }
+    }
+
+    var enabled: Bool {
+        didSet {
+            UserDefaults.standard.setValue(enabled, for: .mediaKeyListeningEnabled)
+            if enabled {
+                try? keyWatcher.start()
+            } else {
+                keyWatcher.stop()
+            }
+        }
     }
 
     func showAutomationDeniedAlert() {

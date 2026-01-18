@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		502BC8EA2F1D36A5008C33A3 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.md; sourceTree = "<group>"; };
 		50C768B42F1CE7E8000E5F7D /* Keyhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C768D12F1D092B000E5F7D /* MediaKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyController.swift; sourceTree = "<group>"; };
 		50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyWatcher.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		50C768AB2F1CE7E8000E5F7D = {
 			isa = PBXGroup;
 			children = (
+				502BC8EA2F1D36A5008C33A3 /* TODO.md */,
 				50C7692D2F1D2228000E5F7D /* Shared Settings.xcconfig */,
 				50C768D72F1D092B000E5F7D /* Keyhole */,
 				50C768B52F1CE7E8000E5F7D /* Products */,

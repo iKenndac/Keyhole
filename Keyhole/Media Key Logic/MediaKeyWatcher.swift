@@ -81,6 +81,8 @@ final class MediaKeyWatcher {
     func stop() {
         if let activeTap { CFMachPortInvalidate(activeTap) }
         if let activeSource { CFRunLoopRemoveSource(CFRunLoopGetMain(), activeSource, .commonModes) }
+        activeTap = nil
+        activeSource = nil
         state = .stopped
     }
 

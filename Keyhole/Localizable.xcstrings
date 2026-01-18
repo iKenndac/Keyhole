@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "AppInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole forwards your keyboard's media keys directly to your media player."
+          }
+        }
+      }
+    },
     "AppName" : {
       "comment" : "Don’t localise.",
       "extractionState" : "manual",
@@ -9,6 +20,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keyhole"
+          }
+        }
+      }
+    },
+    "EnableKeyholeSettingTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable Keyhole"
+          }
+        }
+      }
+    },
+    "QuitButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quit Keyhole"
+          }
+        }
+      }
+    },
+    "SettingsSectionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         }
       }
@@ -30,7 +74,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Perform System Default Action"
+            "value" : "Perform the System Default Action"
           }
         }
       }
@@ -53,6 +97,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Do Nothing"
+          }
+        }
+      }
+    },
+    "UtilitiesSectionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilities"
           }
         }
       }

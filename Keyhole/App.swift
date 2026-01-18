@@ -10,7 +10,7 @@ struct KeyholeApp: App {
     }
 
     var body: some Scene {
-        MenuBarExtra(.appName, systemImage: "playpause.fill") {
+        MenuBarExtra(.appName, systemImage: controller.enabled ? "play.fill" : "play.slash.fill") {
             SettingsView(controller: controller)
                 .frame(maxHeight: .infinity)
         }
