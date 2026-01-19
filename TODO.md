@@ -4,7 +4,6 @@
 - "Fix…" buttons next to the permission problem notes in the UI
 - About dialog
 - Update mechanism
-- "Is it working?" indicator in the UI somehow
 
 ### Reliability
 

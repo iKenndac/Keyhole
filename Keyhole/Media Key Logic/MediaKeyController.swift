@@ -77,6 +77,9 @@ extension UserDefaultsKey {
             else { keyWatcher.stop() }
         }
     }
+    
+    /// The currently pressed key, if any.
+    var currentlyPressedKey: MediaKey?
 
     /// Returns `true` if the app has accessibility permissions, otherwise `false`.
     private(set) var hasAccessibilityPermission: Bool = false
@@ -185,6 +188,8 @@ extension UserDefaultsKey {
     }
 
     private func handleMediaKey(from watcher: MediaKeyWatcher, key: MediaKey, isDown: Bool) -> MediaKeyHandlingResult {
+        currentlyPressedKey = (isDown ? key : nil)
+
         guard let target: any MediaAppIntegration = {
             let installedIntegrations = integrations.filter({ $0.isInstalled })
             // Prefer the picked target.

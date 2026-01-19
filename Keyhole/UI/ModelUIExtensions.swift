@@ -14,3 +14,13 @@ extension TargetNotRunningAction {
 extension MediaKeyController.MediaAppDetailsWithState: Identifiable {
     var id: Self { return self }
 }
+
+extension MediaKey {
+    var systemImageName: String {
+        switch self {
+        case .playPause: return "playpause.fill"
+        case .fastForward, .nextTrack: return "forward.fill"
+        case .rewind, .previousTrack: return "backward.fill"
+        }
+    }
+}

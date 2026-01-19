@@ -13,6 +13,7 @@ struct SettingsView: View {
                 HStack {
                     Text(.appName).bold()
                     Spacer(minLength: 0.0)
+                    if let key = controller.currentlyPressedKey { Image(systemName: key.systemImageName) }
                     Menu(content: { Button(.quitButtonTitle, action: { NSApplication.shared.terminate(nil) }) },
                          label: { Image(systemName: "gearshape.fill") })
                     .buttonStyle(.borderless)
