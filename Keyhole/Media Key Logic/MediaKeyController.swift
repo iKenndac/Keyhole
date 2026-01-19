@@ -24,10 +24,13 @@ extension TargetNotRunningAction: UserDefaultsStoreableValue {
 
 extension UserDefaultsKey {
     static var targetNotRunningAction: UserDefaultsKey<TargetNotRunningAction> {
-        .init("TargetNotRunningAction", defaultValue: .propagateEvent)
+        return .init("TargetNotRunningAction", defaultValue: .propagateEvent)
     }
     static var mediaKeyListeningEnabled: UserDefaultsKey<Bool> {
-        .init("MediaKeyHandlingEnabled", defaultValue: true)
+        return .init("MediaKeyHandlingEnabled", defaultValue: true)
+    }
+    static var preferredTargetBundleId: UserDefaultsKey<String> {
+        return .init("PreferredTarget", defaultValue: MusicAppIntegration.bundleId, shouldRegister: false)
     }
 }
 
@@ -38,8 +41,14 @@ extension UserDefaultsKey {
     private let integrations: [any MediaAppIntegration]
 
     init() {
-        // Only one for now, but literally the first ticket will be "But Spotify????", so might as well design for it.
-        integrations = [MusicAppIntegration()]
+        integrations = [MusicAppIntegration(), SpotifyAppIntegration()]
+
+        let preferredBundleId = UserDefaults.standard.value(for: .preferredTargetBundleId)
+        let targets = integrations.filter({ $0.isInstalled }).map({ AvailableTarget(appName: $0.appName, bundleId: $0.bundleId) })
+        availableTargets = targets
+        preferredTarget = targets.first(where: { $0.bundleId == preferredBundleId }) ?? targets.first ??
+            .init(appName: MusicAppIntegration.appName, bundleId: MusicAppIntegration.bundleId)
+
         targetNotRunningAction = UserDefaults.standard.value(for: .targetNotRunningAction)
         enabled = UserDefaults.standard.value(for: .mediaKeyListeningEnabled)
         keyWatcher = MediaKeyWatcher()
@@ -71,6 +80,20 @@ extension UserDefaultsKey {
 
     /// Returns `true` if the app has accessibility permissions, otherwise `false`.
     private(set) var hasAccessibilityPermission: Bool = false
+
+    struct AvailableTarget: Equatable, Hashable, Identifiable {
+        var id: String { return bundleId }
+        let appName: String
+        let bundleId: String
+    }
+    
+    /// Returns the list of available apps.
+    private(set) var availableTargets: [AvailableTarget]
+    
+    /// Returns the preferred media key target. Will be adjusted if an app isn't installed on launch.
+    var preferredTarget: AvailableTarget {
+        didSet { UserDefaults.standard.setValue(preferredTarget.bundleId, for: .preferredTargetBundleId) }
+    }
 
     struct MediaAppDetailsWithState: Equatable, Hashable {
         let bundleId: String
@@ -135,7 +158,7 @@ extension UserDefaultsKey {
     }
 
     private func updateAppStates() {
-        appStates = integrations.map({
+        appStates = integrations.filter({ $0.isInstalled }).map({
             MediaAppDetailsWithState(bundleId: $0.bundleId, appName: $0.appName, state: $0.appState)
         })
         updateHasPermissionsProblemFromCachedProperties()
@@ -162,45 +185,57 @@ extension UserDefaultsKey {
     }
 
     private func handleMediaKey(from watcher: MediaKeyWatcher, key: MediaKey, isDown: Bool) -> MediaKeyHandlingResult {
+        guard let target: any MediaAppIntegration = {
+            let installedIntegrations = integrations.filter({ $0.isInstalled })
+            // Prefer the picked target.
+            if let pickedTarget = installedIntegrations.first(where: { $0.bundleId == preferredTarget.bundleId }) {
+                return pickedTarget
+
+            } else if let runningApp = installedIntegrations.first(where: { $0.appState.appIsRunning }) {
+                return runningApp
+
+            } else {
+                return integrations.first
+            }
+        }() else { return .propagateEvent }
+
         // Right now, only deal with key downs.
         guard isDown else { return .blockEventPropagation }
 
-        print("I am handling a key!")
-
-        guard let target = integrations.first(where: { $0.appState.appIsRunning }) else {
+        switch target.appState {
+        case .notRunning:
             switch targetNotRunningAction {
             case .swallowEvent: return .blockEventPropagation
             case .propagateEvent: return .propagateEvent
             case .launchTarget:
-                // When we support multiple apps, we need to have a better target finding method.
-                guard let target = integrations.first else { return .blockEventPropagation }
                 attemptToGainPermissionToAutomate(target)
                 return .blockEventPropagation
             }
-        }
 
-        if target.appState == .runningWithPendingAutomationAccess {
+        case .runningWithDeniedAutomationAccess:
+            // If we definitively don't have permission, the app will be showing a /!\ symbol in the menu bar.
+            // TODO: Figure out if we should defer back to the system in this case, othewise we're breaking the media keys.
+            return .blockEventPropagation
+
+        case .runningWithPendingAutomationAccess:
             attemptToGainPermissionToAutomate(target)
             return .blockEventPropagation
-        }
 
-        guard target.appState == .runningWithAutomationAccess else {
+        case .runningWithAutomationAccess:
+            do {
+                switch key {
+                case .playPause: try target.playPause()
+                case .previousTrack: try target.skipBack()
+                case .nextTrack: try target.skipForward()
+                case .fastForward: break
+                case .rewind: break
+                }
+            } catch {
+                // TODO: Log something.
+            }
+
             return .blockEventPropagation
         }
-
-        do {
-            switch key {
-            case .playPause: try target.playPause()
-            case .previousTrack: try target.skipBack()
-            case .nextTrack: try target.skipForward()
-            case .fastForward: break
-            case .rewind: break
-            }
-        } catch {
-            // TODO: Log something.
-        }
-
-        return .blockEventPropagation
     }
 }
 

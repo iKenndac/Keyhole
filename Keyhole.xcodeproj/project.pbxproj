@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502BC90C2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */; };
+		502BC90E2F1E2776008C33A3 /* SpotifyAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */; };
+		502BC9102F1E281F008C33A3 /* ScriptableAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */; };
 		50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D12F1D092B000E5F7D /* MediaKeyController.swift */; };
 		50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */; };
 		50C768DA2F1D092B000E5F7D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D42F1D092B000E5F7D /* App.swift */; };
@@ -24,6 +27,10 @@
 
 /* Begin PBXFileReference section */
 		502BC8EA2F1D36A5008C33A3 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.md; sourceTree = "<group>"; };
+		502BC90A2F1E2661008C33A3 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySwiftScriptingBridge.swift; sourceTree = "<group>"; };
+		502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAppIntegration.swift; sourceTree = "<group>"; };
+		502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptableAppIntegration.swift; sourceTree = "<group>"; };
 		50C768B42F1CE7E8000E5F7D /* Keyhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C768D12F1D092B000E5F7D /* MediaKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyController.swift; sourceTree = "<group>"; };
 		50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyWatcher.swift; sourceTree = "<group>"; };
@@ -55,6 +62,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502BC9092F1E264F008C33A3 /* Spotify App Integration */ = {
+			isa = PBXGroup;
+			children = (
+				502BC90A2F1E2661008C33A3 /* Spotify.h */,
+				502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */,
+				502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */,
+			);
+			path = "Spotify App Integration";
+			sourceTree = "<group>";
+		};
 		50C768AB2F1CE7E8000E5F7D = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				50C768E12F1D0C4A000E5F7D /* MediaAppIntegration.swift */,
+				502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */,
+				502BC9092F1E264F008C33A3 /* Spotify App Integration */,
 				50C768E32F1D0C6B000E5F7D /* Music App Integration */,
 				50C769022F1D0CA9000E5F7D /* Scripting Bridge Helpers */,
 			);
@@ -221,6 +240,9 @@
 				50C769302F1D237A000E5F7D /* ModelUIExtensions.swift in Sources */,
 				50C768E22F1D0C4F000E5F7D /* MediaAppIntegration.swift in Sources */,
 				50C769062F1D0CCB000E5F7D /* ScriptingBridgeSession.swift in Sources */,
+				502BC90C2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift in Sources */,
+				502BC9102F1E281F008C33A3 /* ScriptableAppIntegration.swift in Sources */,
+				502BC90E2F1E2776008C33A3 /* SpotifyAppIntegration.swift in Sources */,
 				50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */,
 				50C769332F1D260C000E5F7D /* UserDefaultsExtensions.swift in Sources */,
 				50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */,

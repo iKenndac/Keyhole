@@ -26,7 +26,9 @@ enum MediaAppCommandError: Error {
 protocol MediaAppIntegration: AnyObject {
 
     static var bundleId: String { get }
+    static var appName: String { get }
     var bundleId: String { get }
+    var isInstalled: Bool { get }
     var appName: String { get }
 
     @ObservationTracked var appState: MediaAppState { get }
