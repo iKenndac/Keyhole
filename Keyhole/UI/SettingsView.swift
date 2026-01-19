@@ -21,23 +21,50 @@ struct SettingsView: View {
 
             Section(content: {
                 VStack(alignment: .leading, spacing: 10.0) {
-                    Toggle(.launchAtLoginSettingTitle, isOn: $controller.launchAtLogin)
-                        .toggleStyle(.checkbox)
-                    Toggle(.enableKeyholeSettingTitle, isOn: $controller.enabled)
-                        .toggleStyle(.checkbox)
-
-                    Text(.targetNotRunningSettingTitle)
-                        .disabled(!controller.enabled)
-                    Picker(.targetNotRunningSettingTitle, selection: $controller.targetNotRunningAction) {
-                        ForEach(TargetNotRunningAction.allCases) {
-                            Text($0.localizedDisplayValue)
-                        }
+                    SettingsRow(.launchAtLoginSettingTitle) {
+                        Toggle(.launchAtLoginSettingTitle, isOn: $controller.launchAtLogin)
+                            .toggleStyle(.switch)
+                            .controlSize(.mini)
+                            .labelsHidden()
                     }
-                    .pickerStyle(.menu)
-                    .labelsVisibility(.hidden)
-                    .disabled(!controller.enabled)
+                    SettingsRow(.enableKeyholeSettingTitle) {
+                        Toggle(.enableKeyholeSettingTitle, isOn: $controller.enabled)
+                            .toggleStyle(.switch)
+                            .controlSize(.mini)
+                            .labelsHidden()
+                    }
+
                 }.padding(.leading, 10.0)
             }, header: { Text(.settingsSectionTitle).bold() })
+
+            Section(content: {
+                VStack(alignment: .leading, spacing: 10.0) {
+                    if controller.availableTargets.count > 1 {
+                        SettingsRow(.preferredMediaPlayerSettingTitle) {
+                            Picker(.preferredMediaPlayerSettingTitle, selection: $controller.preferredTarget) {
+                                ForEach(controller.availableTargets) {
+                                    Text($0.appName)
+                                        .tag($0)
+                                }
+                            }
+                            .pickerStyle(.menu)
+                            .labelsVisibility(.hidden)
+                            .disabled(!controller.enabled)
+                        }
+                    }
+
+                    SettingsRow(.targetNotRunningSettingTitle(appName: controller.preferredTarget.appName)) {
+                        Picker(.targetNotRunningSettingTitle(appName: controller.preferredTarget.appName), selection: $controller.targetNotRunningAction) {
+                            ForEach(TargetNotRunningAction.allCases) {
+                                Text($0.localizedDisplayValue)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        .labelsVisibility(.hidden)
+                        .disabled(!controller.enabled)
+                    }
+                }.padding(.leading, 10.0)
+            }, header: { Text(.mediaKeyHandlingSectionTitle).bold() })
 
             Section(content: {
                 VStack(alignment: .leading, spacing: 10.0) {
@@ -96,5 +123,24 @@ struct SettingsView: View {
         case true: return .green
         case false: return .red
         }
+    }
+}
+
+struct SettingsRow<V: View>: View {
+    init(_ label: LocalizedStringResource, content: @escaping () -> V) {
+        self.label = label
+        self.content = content
+    }
+
+    let label: LocalizedStringResource
+    @ViewBuilder let content: () -> V
+
+    var body: some View {
+        HStack {
+            Text(label)
+            Spacer(minLength: 6.0)
+            content()
+        }
+        .frame(height: 20.0)
     }
 }

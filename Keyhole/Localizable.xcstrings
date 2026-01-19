@@ -79,6 +79,17 @@
         }
       }
     },
+    "MediaKeyHandlingSectionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Media Key Handling"
+          }
+        }
+      }
+    },
     "PermissionsSectionTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -86,6 +97,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Permissions"
+          }
+        }
+      }
+    },
+    "PreferredMediaPlayerSettingTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferred media player"
           }
         }
       }
@@ -118,7 +140,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Launch the Music app"
+            "value" : "Launch the app"
           }
         }
       }
@@ -129,7 +151,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Perform the system default action"
+            "value" : "System default"
           }
         }
       }
@@ -140,7 +162,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "If the Music app isn’t running when a media key is pressed: "
+            "value" : "If %1$(appName)@ isn’t running"
           }
         }
       }
