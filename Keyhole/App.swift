@@ -3,16 +3,20 @@ import SwiftUI
 @main
 struct KeyholeApp: App {
 
-    let controller: MediaKeyController
+    let mediaKeyController: MediaKeyController
+    let updateController: UpdateController
     @Environment(\.openWindow) var openWindow
 
     init() {
-        controller = MediaKeyController()
+        mediaKeyController = MediaKeyController()
+        updateController = UpdateController()
     }
 
     var menuBarImageName: String {
-        if controller.enabled {
-            if controller.hasPermissionsProblem {
+        if updateController.updateAvailable {
+            return "arrow.up.circle.fill"
+        } else if mediaKeyController.enabled {
+            if mediaKeyController.hasPermissionsProblem {
                 return "exclamationmark.triangle.fill"
             } else {
                 return "play.fill"
@@ -24,7 +28,7 @@ struct KeyholeApp: App {
 
     var body: some Scene {
         MenuBarExtra(.appName, systemImage: menuBarImageName) {
-            SettingsView(controller: controller)
+            SettingsView(mediaKeyController: mediaKeyController, updateController: updateController)
                 .frame(maxHeight: .infinity)
                 .containerBackground(.regularMaterial, for: .window)
         }

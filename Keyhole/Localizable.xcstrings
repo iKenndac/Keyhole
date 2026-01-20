@@ -77,6 +77,18 @@
             "value" : "Keyhole"
           }
         }
+      },
+      "shouldTranslate" : false
+    },
+    "AutomaticallyCheckForUpdatesSettingTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatically check for updates"
+          }
+        }
       }
     },
     "AutomationPermissionNotRunningTitle" : {
@@ -97,6 +109,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Automation for the %1$(appName)@ app"
+          }
+        }
+      }
+    },
+    "CheckForUpdatesMenuTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check for Updates…"
+          }
+        }
+      }
+    },
+    "DismissButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dismiss"
           }
         }
       }
@@ -130,6 +164,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Media Key Handling"
+          }
+        }
+      }
+    },
+    "OpenSourceLicensesButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Source Licenses…"
+          }
+        }
+      }
+    },
+    "OpenSourceLicensesHeader" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole uses the following open-source software:"
           }
         }
       }
@@ -178,6 +234,17 @@
         }
       }
     },
+    "ShowPendingUpdateInfoButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More Info…"
+          }
+        }
+      }
+    },
     "TargetNotRunningLaunchTargetTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -218,6 +285,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Do nothing"
+          }
+        }
+      }
+    },
+    "UpdateAvailableTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**An update is available!**"
           }
         }
       }

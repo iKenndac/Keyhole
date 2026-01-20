@@ -12,6 +12,9 @@
 		502BC9102F1E281F008C33A3 /* ScriptableAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */; };
 		502BC93A2F1FF073008C33A3 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC9392F1FF073008C33A3 /* Logging.swift */; };
 		502BC93C2F1FF534008C33A3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC93B2F1FF531008C33A3 /* AboutView.swift */; };
+		502BC95D2F20018D008C33A3 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 502BC95C2F20018D008C33A3 /* Sparkle */; };
+		502BC95F2F2005BC008C33A3 /* UpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC95E2F2005B6008C33A3 /* UpdateController.swift */; };
+		502BC9612F20156B008C33A3 /* OSSLicenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = 502BC9602F20144D008C33A3 /* OSSLicenses.txt */; };
 		50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D12F1D092B000E5F7D /* MediaKeyController.swift */; };
 		50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */; };
 		50C768DA2F1D092B000E5F7D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D42F1D092B000E5F7D /* App.swift */; };
@@ -35,6 +38,8 @@
 		502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptableAppIntegration.swift; sourceTree = "<group>"; };
 		502BC9392F1FF073008C33A3 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		502BC93B2F1FF531008C33A3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		502BC95E2F2005B6008C33A3 /* UpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateController.swift; sourceTree = "<group>"; };
+		502BC9602F20144D008C33A3 /* OSSLicenses.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OSSLicenses.txt; sourceTree = "<group>"; };
 		50C768B42F1CE7E8000E5F7D /* Keyhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C768D12F1D092B000E5F7D /* MediaKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyController.swift; sourceTree = "<group>"; };
 		50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyWatcher.swift; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502BC95D2F20018D008C33A3 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,7 @@
 				50C768E02F1D0C40000E5F7D /* App Integrations */,
 				50C769312F1D2602000E5F7D /* Utilities */,
 				50C768D52F1D092B000E5F7D /* Assets.xcassets */,
+				502BC9602F20144D008C33A3 /* OSSLicenses.txt */,
 				50C768DE2F1D0C11000E5F7D /* Localizable.xcstrings */,
 				50C769172F1D218D000E5F7D /* Info.plist */,
 				50C769162F1D1B34000E5F7D /* Entitlements.entitlements */,
@@ -163,6 +170,7 @@
 		50C769312F1D2602000E5F7D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				502BC95E2F2005B6008C33A3 /* UpdateController.swift */,
 				50C769322F1D260C000E5F7D /* UserDefaultsExtensions.swift */,
 				502BC9392F1FF073008C33A3 /* Logging.swift */,
 			);
@@ -176,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50C768BF2F1CE7E9000E5F7D /* Build configuration list for PBXNativeTarget "Keyhole" */;
 			buildPhases = (
+				502BC9762F20194B008C33A3 /* Generate Version Info Headers */,
 				50C768B02F1CE7E8000E5F7D /* Sources */,
 				50C768B12F1CE7E8000E5F7D /* Frameworks */,
 				50C768B22F1CE7E8000E5F7D /* Resources */,
@@ -186,6 +195,7 @@
 			);
 			name = Keyhole;
 			packageProductDependencies = (
+				502BC95C2F20018D008C33A3 /* Sparkle */,
 			);
 			productName = MediaKeyMadness;
 			productReference = 50C768B42F1CE7E8000E5F7D /* Keyhole.app */;
@@ -215,6 +225,9 @@
 			);
 			mainGroup = 50C768AB2F1CE7E8000E5F7D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				502BC95B2F20018D008C33A3 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 50C768B52F1CE7E8000E5F7D /* Products */;
 			projectDirPath = "";
@@ -230,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502BC9612F20156B008C33A3 /* OSSLicenses.txt in Resources */,
 				50C768DF2F1D0C11000E5F7D /* Localizable.xcstrings in Resources */,
 				50C768DC2F1D092B000E5F7D /* Assets.xcassets in Resources */,
 			);
@@ -237,12 +251,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		502BC9762F20194B008C33A3 /* Generate Version Info Headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Version Info Headers";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILD_DIR)/KeyholeVersions.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "GIT_RELEASE_VERSION=$(git describe --tags --always --dirty --long)\nGIT_RELEASE_VERSION=${GIT_RELEASE_VERSION/-0-/-}\n\nCOMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\n\nmkdir -p \"$BUILD_DIR\"\n\necho \"#define KEYHOLE_VERBOSE_VERSION ${GIT_RELEASE_VERSION#*v}\" > \"$BUILD_DIR/KeyholeVersions.h\"\necho \"#define KEYHOLE_BUNDLE_VERSION ${COMMITS}\" >> \"$BUILD_DIR/KeyholeVersions.h\"\necho \"#define KEYHOLE_MARKETING_VERSION ${MARKETING_VERSION}\" >> \"$BUILD_DIR/KeyholeVersions.h\"\n\necho \"Written to $BUILD_DIR/KeyholeVersions.h\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50C768B02F1CE7E8000E5F7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				502BC93C2F1FF534008C33A3 /* AboutView.swift in Sources */,
+				502BC95F2F2005BC008C33A3 /* UpdateController.swift in Sources */,
 				50C769092F1D0DAE000E5F7D /* MusicAppSwiftScriptingBridge.swift in Sources */,
 				502BC93A2F1FF073008C33A3 /* Logging.swift in Sources */,
 				50C769302F1D237A000E5F7D /* ModelUIExtensions.swift in Sources */,
@@ -303,7 +341,6 @@
 				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -368,7 +405,6 @@
 				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -399,19 +435,11 @@
 				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
-				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
-				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
-				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
-				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
-				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
-				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
-				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
-				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
-				ENABLE_RESOURCE_ACCESS_USB = NO;
 				INFOPLIST_FILE = Keyhole/Info.plist;
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
+				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/KeyholeVersions.h";
+				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -420,12 +448,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.Keyhole;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
-				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
-				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
-				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
-				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
-				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -448,19 +470,11 @@
 				DEVELOPMENT_TEAM = RPBBKY7VG7;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
-				ENABLE_OUTGOING_NETWORK_CONNECTIONS = NO;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
-				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
-				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
-				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
-				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
-				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
-				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
-				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
-				ENABLE_RESOURCE_ACCESS_USB = NO;
 				INFOPLIST_FILE = Keyhole/Info.plist;
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
+				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/KeyholeVersions.h";
+				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -469,12 +483,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.danielkennett.Keyhole;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
-				RUNTIME_EXCEPTION_ALLOW_DYLD_ENVIRONMENT_VARIABLES = NO;
-				RUNTIME_EXCEPTION_ALLOW_JIT = NO;
-				RUNTIME_EXCEPTION_ALLOW_UNSIGNED_EXECUTABLE_MEMORY = NO;
-				RUNTIME_EXCEPTION_DEBUGGING_TOOL = NO;
-				RUNTIME_EXCEPTION_DISABLE_EXECUTABLE_PAGE_PROTECTION = NO;
-				RUNTIME_EXCEPTION_DISABLE_LIBRARY_VALIDATION = NO;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -506,6 +514,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		502BC95B2F20018D008C33A3 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		502BC95C2F20018D008C33A3 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 502BC95B2F20018D008C33A3 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 50C768AC2F1CE7E8000E5F7D /* Project object */;
 }
