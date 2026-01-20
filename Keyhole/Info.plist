@@ -27,7 +27,7 @@
 	<key>NSAppleEventsUsageDescription</key>
 	<string>Keyhole uses automation to forward your key presses along to your chosen media player.</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>© Daniel Kennett</string>
+	<string>© 2026 Daniel Kennett</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSUIElement</key>

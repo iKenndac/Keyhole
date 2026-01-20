@@ -65,6 +65,7 @@ final class MediaKeyWatcher {
                                                  callback: eventTapCallBack,
                                                  userInfo: Unmanaged.passUnretained(self).toOpaque())
         guard let tap else {
+            LogError("Failed to start event tap: We probably don't have accessibility permissions?")
             state = .missingAccessibilityPermissions
             throw .missingAccessibilityPermissions
         }

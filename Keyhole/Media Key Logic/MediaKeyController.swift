@@ -207,12 +207,19 @@ extension UserDefaultsKey {
         // Right now, only deal with key downs.
         guard isDown else { return .blockEventPropagation }
 
+        LogVerbose("Targeting \(key) towards \(target.bundleId)…")
+
         switch target.appState {
         case .notRunning:
             switch targetNotRunningAction {
-            case .swallowEvent: return .blockEventPropagation
-            case .propagateEvent: return .propagateEvent
+            case .swallowEvent:
+                LogVerbose("…it's not running, and we're swallowing the keypress as per the user setting.")
+                return .blockEventPropagation
+            case .propagateEvent:
+                LogVerbose("…it's not running, and we're propagating the keypress to the system as per the user setting.")
+                return .propagateEvent
             case .launchTarget:
+                LogVerbose("…it's not running, and we're launching the target as per the user setting.")
                 attemptToGainPermissionToAutomate(target)
                 return .blockEventPropagation
             }
@@ -220,9 +227,11 @@ extension UserDefaultsKey {
         case .runningWithDeniedAutomationAccess:
             // If we definitively don't have permission, the app will be showing a /!\ symbol in the menu bar.
             // TODO: Figure out if we should defer back to the system in this case, othewise we're breaking the media keys.
+            LogWarning("\(target.bundleId) is running, but we don't have permission to automate it!")
             return .blockEventPropagation
 
         case .runningWithPendingAutomationAccess:
+            LogVerbose("…it's running, but we don't have permission to automate *yet*. Let's ask!")
             attemptToGainPermissionToAutomate(target)
             return .blockEventPropagation
 
@@ -235,8 +244,9 @@ extension UserDefaultsKey {
                 case .fastForward: break
                 case .rewind: break
                 }
+                LogVerbose("…command sent to running process successfully.")
             } catch {
-                // TODO: Log something.
+                LogWarning("Sending command to \(target.bundleId) failed with error: \(error)")
             }
 
             return .blockEventPropagation

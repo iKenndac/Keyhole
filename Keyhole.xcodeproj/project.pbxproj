@@ -10,6 +10,8 @@
 		502BC90C2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */; };
 		502BC90E2F1E2776008C33A3 /* SpotifyAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */; };
 		502BC9102F1E281F008C33A3 /* ScriptableAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */; };
+		502BC93A2F1FF073008C33A3 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC9392F1FF073008C33A3 /* Logging.swift */; };
+		502BC93C2F1FF534008C33A3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC93B2F1FF531008C33A3 /* AboutView.swift */; };
 		50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D12F1D092B000E5F7D /* MediaKeyController.swift */; };
 		50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */; };
 		50C768DA2F1D092B000E5F7D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D42F1D092B000E5F7D /* App.swift */; };
@@ -31,6 +33,8 @@
 		502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySwiftScriptingBridge.swift; sourceTree = "<group>"; };
 		502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAppIntegration.swift; sourceTree = "<group>"; };
 		502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptableAppIntegration.swift; sourceTree = "<group>"; };
+		502BC9392F1FF073008C33A3 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		502BC93B2F1FF531008C33A3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		50C768B42F1CE7E8000E5F7D /* Keyhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C768D12F1D092B000E5F7D /* MediaKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyController.swift; sourceTree = "<group>"; };
 		50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyWatcher.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				50C768D62F1D092B000E5F7D /* SettingsView.swift */,
+				502BC93B2F1FF531008C33A3 /* AboutView.swift */,
 				50C7692F2F1D2375000E5F7D /* ModelUIExtensions.swift */,
 			);
 			path = UI;
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				50C769322F1D260C000E5F7D /* UserDefaultsExtensions.swift */,
+				502BC9392F1FF073008C33A3 /* Logging.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -236,7 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502BC93C2F1FF534008C33A3 /* AboutView.swift in Sources */,
 				50C769092F1D0DAE000E5F7D /* MusicAppSwiftScriptingBridge.swift in Sources */,
+				502BC93A2F1FF073008C33A3 /* Logging.swift in Sources */,
 				50C769302F1D237A000E5F7D /* ModelUIExtensions.swift in Sources */,
 				50C768E22F1D0C4F000E5F7D /* MediaAppIntegration.swift in Sources */,
 				50C769062F1D0CCB000E5F7D /* ScriptingBridgeSession.swift in Sources */,

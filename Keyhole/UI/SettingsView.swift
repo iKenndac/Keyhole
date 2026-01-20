@@ -4,6 +4,7 @@ import Observation
 struct SettingsView: View {
 
     @State var controller: MediaKeyController
+    @Environment(\.openWindow) var openWindow
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10.0) {
@@ -14,8 +15,11 @@ struct SettingsView: View {
                     Text(.appName).bold()
                     Spacer(minLength: 0.0)
                     if let key = controller.currentlyPressedKey { Image(systemName: key.systemImageName) }
-                    Menu(content: { Button(.quitButtonTitle, action: { NSApplication.shared.terminate(nil) }) },
-                         label: { Image(systemName: "gearshape.fill") })
+                    Menu(content: {
+                        Button(.aboutMenuItemTitle, action: { NSApplication.shared.activate(); openWindow(id: "about") })
+                        Divider()
+                        Button(.quitButtonTitle, action: { NSApplication.shared.terminate(nil) })
+                    }, label: { Image(systemName: "gearshape.fill") })
                     .buttonStyle(.borderless)
                 }
             })
@@ -81,7 +85,7 @@ struct SettingsView: View {
                         let (imageName, color, label): (String, Color, LocalizedStringResource) = {
                             switch appState.state {
                             case .notRunning:
-                                return ("questionmark.circle.fill", .gray, .automationPermissionNotRunningTitle(appName: appState.appName))
+                                return ("questionmark.circle.fill", .gray.opacity(0.4), .automationPermissionNotRunningTitle(appName: appState.appName))
                             case .runningWithDeniedAutomationAccess:
                                 return ("xmark.circle.fill", .red, .automationPermissionTitle(appName: appState.appName))
                             case .runningWithPendingAutomationAccess:

@@ -1,6 +1,50 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "AboutMenuItemTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About Keyhole…"
+          }
+        }
+      }
+    },
+    "AboutWindowTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About Keyhole"
+          }
+        }
+      }
+    },
+    "AboutWindowVersionFormatter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %1$(version)@ (%2$(build)@)"
+          }
+        }
+      }
+    },
+    "AboutWindowWebsiteButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole Website"
+          }
+        }
+      }
+    },
     "AccessibilityPermissionTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,7 +85,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$(appName)@ is not running"
+            "value" : "%1$(appName)@ isn’t running"
           }
         }
       }
