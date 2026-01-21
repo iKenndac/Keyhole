@@ -107,9 +107,10 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 10.0) {
                     HStack(spacing: 6.0) {
                         Image(systemName: systemImageName(for: mediaKeyController.hasAccessibilityPermission))
+                            .symbolRenderingMode(.palette)
                             .resizable()
                             .frame(width: 14.0, height: 14.0)
-                            .foregroundStyle(color(for: mediaKeyController.hasAccessibilityPermission).gradient)
+                            .foregroundStyle(.white, color(for: mediaKeyController.hasAccessibilityPermission).gradient)
                         Text(.accessibilityPermissionTitle)
                         Button(.fixPermissionButtonTitle, action: showPermissionDoctor)
                             .onCondition(mediaKeyController.hasAccessibilityPermission, transform: { $0.hidden() })
@@ -131,9 +132,10 @@ struct SettingsView: View {
 
                         HStack(spacing: 6.0) {
                             Image(systemName: imageName)
+                                .symbolRenderingMode(.palette)
                                 .resizable()
                                 .frame(width: 14.0, height: 14.0)
-                                .foregroundStyle(color.gradient)
+                                .foregroundStyle(.white, color.gradient)
                             Text(label)
                             Button(.fixPermissionButtonTitle, action: showPermissionDoctor)
                                 .onCondition(appState.state != .runningWithDeniedAutomationAccess, transform: { $0.hidden() })
