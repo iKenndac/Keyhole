@@ -10,6 +10,11 @@ struct SettingsView: View {
     // For whatever reason, our form sections are _way_ too far apart with applying this to our headers :-/
     private let formSectionSpacingFix: CGFloat = -12.0
 
+    private func showPermissionDoctor() {
+        NSApplication.shared.activate()
+        openWindow(id: KeyholeApp.WindowId.permissionDoctor)
+    }
+
     var body: some View {
         Form {
             Section(content: {
@@ -21,7 +26,12 @@ struct SettingsView: View {
                     Spacer(minLength: 0.0)
                     if let key = mediaKeyController.currentlyPressedKey { Image(systemName: key.systemImageName) }
                     Menu(content: {
-                        Button(.aboutMenuItemTitle, action: { NSApplication.shared.activate(); openWindow(id: "about") })
+                        Button(.aboutMenuItemTitle, action: {
+                            NSApplication.shared.activate()
+                            openWindow(id: KeyholeApp.WindowId.about)
+                        })
+                        Divider()
+                        Button(.showPermissionDoctorMenuTitle, action: showPermissionDoctor)
                         Divider()
                         Button(.checkForUpdatesMenuTitle, action: { updateController.checkForUpdates() })
                         Divider()
@@ -99,15 +109,17 @@ struct SettingsView: View {
                         Image(systemName: systemImageName(for: mediaKeyController.hasAccessibilityPermission))
                             .resizable()
                             .frame(width: 14.0, height: 14.0)
-                            .foregroundStyle(color(for: mediaKeyController.hasAccessibilityPermission))
+                            .foregroundStyle(color(for: mediaKeyController.hasAccessibilityPermission).gradient)
                         Text(.accessibilityPermissionTitle)
+                        Button(.fixPermissionButtonTitle, action: showPermissionDoctor)
+                            .onCondition(mediaKeyController.hasAccessibilityPermission, transform: { $0.hidden() })
                     }
 
                     ForEach(mediaKeyController.appStates) { appState in
                         let (imageName, color, label): (String, Color, LocalizedStringResource) = {
                             switch appState.state {
                             case .notRunning:
-                                return ("questionmark.circle.fill", .gray.opacity(0.4), .automationPermissionNotRunningTitle(appName: appState.appName))
+                                return ("questionmark.circle.fill", .gray.opacity(0.6), .automationPermissionNotRunningTitle(appName: appState.appName))
                             case .runningWithDeniedAutomationAccess:
                                 return ("xmark.circle.fill", .red, .automationPermissionTitle(appName: appState.appName))
                             case .runningWithPendingAutomationAccess:
@@ -121,8 +133,10 @@ struct SettingsView: View {
                             Image(systemName: imageName)
                                 .resizable()
                                 .frame(width: 14.0, height: 14.0)
-                                .foregroundStyle(color)
+                                .foregroundStyle(color.gradient)
                             Text(label)
+                            Button(.fixPermissionButtonTitle, action: showPermissionDoctor)
+                                .onCondition(appState.state != .runningWithDeniedAutomationAccess, transform: { $0.hidden() })
                         }
                     }
                 }

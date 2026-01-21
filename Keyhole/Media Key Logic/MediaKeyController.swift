@@ -38,7 +38,7 @@ extension UserDefaultsKey {
 @Observable class MediaKeyController {
 
     private let keyWatcher: MediaKeyWatcher
-    private let integrations: [any MediaAppIntegration]
+    let integrations: [any MediaAppIntegration]
 
     init() {
         integrations = [MusicAppIntegration(), SpotifyAppIntegration()]

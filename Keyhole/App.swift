@@ -3,6 +3,11 @@ import SwiftUI
 @main
 struct KeyholeApp: App {
 
+    struct WindowId {
+        static let about = "about"
+        static let permissionDoctor = "permission-doctor"
+    }
+
     let mediaKeyController: MediaKeyController
     let updateController: UpdateController
     @Environment(\.openWindow) var openWindow
@@ -12,7 +17,12 @@ struct KeyholeApp: App {
         updateController = UpdateController()
     }
 
+    var autoShowPermissionDoctor: Bool {
+        return !UserDefaults.standard.value(for: .hasCompletedOnboarding)
+    }
+
     var menuBarImageName: String {
+        // TODO: It'd be nice to have some custom icons here.
         if updateController.updateAvailable {
             return "arrow.up.circle.fill"
         } else if mediaKeyController.enabled {
@@ -36,11 +46,11 @@ struct KeyholeApp: App {
         .commands {
             CommandGroup(replacing: .appInfo) {
                 // Probably unneeded since we're an agent, but oh well.
-                Button { openWindow(id: "about") } label: { Text(.aboutMenuItemTitle) }
+                Button { openWindow(id: WindowId.about) } label: { Text(.aboutMenuItemTitle) }
             }
         }
 
-        Window(.aboutWindowTitle, id: "about") {
+        Window(.aboutWindowTitle, id: WindowId.about) {
             AboutView()
                 .toolbar(removing: .title)
                 .toolbarBackground(.hidden, for: .windowToolbar)
@@ -49,6 +59,21 @@ struct KeyholeApp: App {
                 .windowFullScreenBehavior(.disabled)
         }
         .defaultLaunchBehavior(.suppressed)
+        .windowBackgroundDragBehavior(.enabled)
+        .windowResizability(.contentSize)
+        .restorationBehavior(.disabled)
+        .windowManagerRole(.associated)
+        .windowLevel(.floating)
+
+        Window(.permissionDoctorWindowTitle, id: WindowId.permissionDoctor) {
+            PermissionDoctorView(mediaKeyController: mediaKeyController, updateController: updateController)
+                .toolbar(removing: .title)
+                .toolbarBackground(.hidden, for: .windowToolbar)
+                .containerBackground(.regularMaterial, for: .window)
+                .windowMinimizeBehavior(.disabled)
+                .windowFullScreenBehavior(.disabled)
+        }
+        .defaultLaunchBehavior(autoShowPermissionDoctor ? .presented : .suppressed)
         .windowBackgroundDragBehavior(.enabled)
         .windowResizability(.contentSize)
         .restorationBehavior(.disabled)

@@ -113,6 +113,17 @@
         }
       }
     },
+    "CancelButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
     "CheckForUpdatesMenuTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -120,6 +131,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Check for Updates…"
+          }
+        }
+      }
+    },
+    "ContinueButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
           }
         }
       }
@@ -142,6 +164,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enable Keyhole"
+          }
+        }
+      }
+    },
+    "FixPermissionButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fix…"
           }
         }
       }
@@ -186,6 +219,127 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keyhole uses the following open-source software:"
+          }
+        }
+      }
+    },
+    "PermissionDoctorAccessibilityText" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole needs the accessibility permission in order to listen for presses of your media keys. You can enable this permission in **Privacy & Security** → **Accessibility** in System Settings.\n\n**Note:** You may need to quit and restart Keyhole after granting permission for keypresses to be detected correctly."
+          }
+        }
+      }
+    },
+    "PermissionDoctorAllOKAlertMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can access Keyhole's settings by clicking the Keyhole icon in your menu bar."
+          }
+        }
+      }
+    },
+    "PermissionDoctorAllOKAlertTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You’re all set!"
+          }
+        }
+      }
+    },
+    "PermissionDoctorAppAutomationText" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole needs permission to automate %1$(appName)@ in order to send commands to it. You can enable this permission in **Privacy & Security** → **Automation** → **Keyhole** in System Settings."
+          }
+        }
+      }
+    },
+    "PermissionDoctorGrantPermissionButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grant Permission…"
+          }
+        }
+      }
+    },
+    "PermissionDoctorIntroText" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome! Keyhole puts you in control of your media keys by making sure they get delivered to the app you *want* them to.\n\nIn order to work correctly, Keyhole needs some permissions from macOS."
+          }
+        }
+      }
+    },
+    "PermissionDoctorMissingPermissionAlertConfirmationButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I Understand"
+          }
+        }
+      }
+    },
+    "PermissionDoctorMissingPermissionAlertMessage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Without permission to use Accessibility and to automate at least one media player, Keyhole won't work correctly.\\n\\nYou can grant these permissions later from the Keyhole icon in your menu bar."
+          }
+        }
+      }
+    },
+    "PermissionDoctorMissingPermissionAlertTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Missing Permissions"
+          }
+        }
+      }
+    },
+    "PermissionDoctorWindowTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permission Doctor"
+          }
+        }
+      }
+    },
+    "PermissionGrantedStatusTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Granted"
           }
         }
       }
@@ -241,6 +395,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "More Info…"
+          }
+        }
+      }
+    },
+    "ShowPermissionDoctorMenuTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Permission Doctor…"
           }
         }
       }
