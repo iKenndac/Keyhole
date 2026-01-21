@@ -39,7 +39,7 @@ import AppKit
 
     // MARK: - API
 
-    var isInstalled: Bool
+    private(set) var isInstalled: Bool
 
     func launchApplication(askingForAutomationPermission askForPermission: Bool) async throws(MediaAppCommandError) {
         switch scriptableAppBridge.sessionState {
@@ -82,6 +82,7 @@ import AppKit
 
     var appStateChangedObserverStorage: [MediaAppStateObservationToken: MediaAppStateChangedObserver] = [:]
     private var stateObserver: ScriptingBridgeSession<AppType>.ObserverToken? = nil
+
     private(set) var appState: MediaAppState = .notRunning {
         didSet { triggerStateChangedObservers(with: appState) }
     }

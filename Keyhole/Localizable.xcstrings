@@ -295,7 +295,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "**An update is available!**"
+            "value" : "An update is available!"
           }
         }
       }

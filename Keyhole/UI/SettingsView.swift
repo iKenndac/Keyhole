@@ -7,14 +7,17 @@ struct SettingsView: View {
     @State var updateController: UpdateController
     @Environment(\.openWindow) var openWindow
 
+    // For whatever reason, our form sections are _way_ too far apart with applying this to our headers :-/
+    private let formSectionSpacingFix: CGFloat = -12.0
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 10.0) {
+        Form {
             Section(content: {
                 Text(.appInfo)
                     .fixedSize(horizontal: false, vertical: true)
             }, header: {
                 HStack {
-                    Text(.appName).bold()
+                    Text(.appName).font(.system(size: 15.0)).bold()
                     Spacer(minLength: 0.0)
                     if let key = mediaKeyController.currentlyPressedKey { Image(systemName: key.systemImageName) }
                     Menu(content: {
@@ -25,7 +28,7 @@ struct SettingsView: View {
                         Button(.quitButtonTitle, action: { NSApplication.shared.terminate(nil) })
                     }, label: { Image(systemName: "gearshape.fill") })
                     .buttonStyle(.borderless)
-                }
+                }.padding(.trailing, -10.0) // Make the menu aligned with the section container edge
             })
 
             Section(content: {
@@ -51,8 +54,8 @@ struct SettingsView: View {
                             }
                         }
                     }
-                }.padding(.leading, 10.0)
-            }, header: { Text(.settingsSectionTitle).bold() })
+                }
+            }, header: { Text(.settingsSectionTitle).bold().padding(.top, formSectionSpacingFix) })
 
             Section(content: {
                 VStack(alignment: .leading, spacing: 10.0) {
@@ -87,8 +90,8 @@ struct SettingsView: View {
                         .labelsVisibility(.hidden)
                         .disabled(!mediaKeyController.enabled)
                     }
-                }.padding(.leading, 10.0)
-            }, header: { Text(.mediaKeyHandlingSectionTitle).bold() })
+                }
+            }, header: { Text(.mediaKeyHandlingSectionTitle).bold().padding(.top, formSectionSpacingFix) })
 
             Section(content: {
                 VStack(alignment: .leading, spacing: 10.0) {
@@ -122,14 +125,14 @@ struct SettingsView: View {
                             Text(label)
                         }
                     }
-                }.padding(.leading, 10.0)
-            }, header: { Text(.permissionsSectionTitle).bold() })
+                }
+            }, header: { Text(.permissionsSectionTitle).bold().padding(.top, formSectionSpacingFix) })
         }
+        .fixedSize(horizontal: false, vertical: true)
+        .scrollDisabled(true)
         .controlSize(.small)
         .font(.system(size: 11.0))
-        .frame(maxWidth: .infinity)
-        .padding(.horizontal, 18.0)
-        .padding(.vertical, 20.0)
+        .frame(width: 320.0) // If it was good enough for the original iPhone, it's good enough for us!
         .formStyle(.grouped)
         // Being a menu extra means the app doesn't come frontmost when the UI is shown, so we need to help out a bit
         .onAppear { mediaKeyController.noteUIShown() }
@@ -162,7 +165,7 @@ struct SettingsRow<V: View>: View {
     var body: some View {
         HStack {
             Text(label)
-            Spacer(minLength: 6.0)
+            Spacer(minLength: 0.0)
             content()
         }
         .frame(height: 20.0)
