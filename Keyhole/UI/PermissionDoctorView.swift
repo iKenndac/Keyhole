@@ -121,7 +121,7 @@ struct PermissionDoctorView: View {
                 Image(.keyholeIcon)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 96.0)
+                    .frame(width: 128.0)
                     .fixedSize()
                 VStack(alignment: .center, spacing: 8.0) {
                     Text(.permissionDoctorIntroText)
@@ -130,7 +130,7 @@ struct PermissionDoctorView: View {
                 }
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
-            }
+            }.allowsHitTesting(false)
             Form {
                 Section {
                     HStack(alignment: .top, spacing: 8.0) {
@@ -142,6 +142,8 @@ struct PermissionDoctorView: View {
                             .foregroundStyle(.white, .blue.gradient)
                             .padding(.horizontal, 12.0)
                             .padding(.top, 4.0)
+                            .compositingGroup()
+                            .shadow(color: .gray, radius: 1.0, x: 0.5, y: 0.5)
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text(.accessibilityPermissionTitle).bold()
                             Text(.permissionDoctorAccessibilityText)
