@@ -7,7 +7,10 @@ assignees: ''
 
 ---
 
-**I confirm that I have read the "How to ask for support a new media player app" section in the project's README:**
+**I confirm that I have read the "How To Ask For A New Media Player" section in the project's README:**
+[Yes/No]
+
+**I confirm that I have checked that the app is automatable:**
 [Yes/No]
 
 **What is the name of the app?**

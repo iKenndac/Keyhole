@@ -44,6 +44,7 @@
 		502BC9602F20144D008C33A3 /* OSSLicenses.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OSSLicenses.txt; sourceTree = "<group>"; };
 		502BC9772F21161B008C33A3 /* PermissionDoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionDoctorView.swift; sourceTree = "<group>"; };
 		502BC9972F212C8F008C33A3 /* SwiftUI+Conditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Conditions.swift"; sourceTree = "<group>"; };
+		507B79E42F2290F4006C628C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		50C768B42F1CE7E8000E5F7D /* Keyhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C768D12F1D092B000E5F7D /* MediaKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyController.swift; sourceTree = "<group>"; };
 		50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyWatcher.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		50C768AB2F1CE7E8000E5F7D = {
 			isa = PBXGroup;
 			children = (
+				507B79E42F2290F4006C628C /* README.md */,
 				502BC8EA2F1D36A5008C33A3 /* TODO.md */,
 				50C7692D2F1D2228000E5F7D /* Shared Settings.xcconfig */,
 				50C768D72F1D092B000E5F7D /* Keyhole */,
