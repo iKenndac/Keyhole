@@ -29,7 +29,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Version %1$(version)@ (%2$(build)@)"
+            "value" : "Version %1$(version)@ (%2$(build)@, %3$(verbose)@)"
           }
         }
       }

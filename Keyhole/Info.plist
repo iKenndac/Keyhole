@@ -24,6 +24,8 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>KEYHOLE_BUNDLE_VERSION</string>
+	<key>KeyholeVerboseVersion</key>
+	<string>KEYHOLE_VERBOSE_VERSION</string>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>Keyhole uses automation to forward your key presses along to your chosen media player.</string>
 	<key>NSHumanReadableCopyright</key>

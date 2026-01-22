@@ -6,7 +6,8 @@ struct AboutView: View {
     private var versionString: LocalizedStringResource {
         let bundleInfo: [String: Any] = Bundle.main.infoDictionary ?? [:]
         return .aboutWindowVersionFormatter(version: bundleInfo["CFBundleShortVersionString"] as? String ?? "?",
-                                            build: bundleInfo[kCFBundleVersionKey as String] as? String ?? "?")
+                                            build: bundleInfo[kCFBundleVersionKey as String] as? String ?? "?",
+                                            verbose: bundleInfo["KeyholeVerboseVersion"] as? String ?? "?")
     }
 
     private var copyrightString: String {
