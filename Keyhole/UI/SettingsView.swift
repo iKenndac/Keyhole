@@ -51,12 +51,22 @@ struct SettingsView: View {
                     }
                     SettingsRow(.automaticallyCheckForUpdatesSettingTitle) {
                         Toggle(.automaticallyCheckForUpdatesSettingTitle, isOn: $updateController.automaticallyCheckForUpdates)
+                            .disabled(!updateController.executionEnvironmentAllowsUpdates)
                             .toggleStyle(.switch)
                             .controlSize(.mini)
                             .labelsHidden()
                     }
 
-                    if updateController.updateAvailable {
+                    if !updateController.executionEnvironmentAllowsUpdates {
+                        HStack(spacing: 4.0) {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                            SettingsRow(.updatesUnavailableTitle) {
+                                // Telling the update controller to check for updates will show an explanation dialog.
+                                Button(.fixPermissionButtonTitle, action: { updateController.checkForUpdates() })
+                            }
+                        }
+
+                    } else if updateController.updateAvailable {
                         HStack(spacing: 4.0) {
                             Image(systemName: "arrow.up.circle.fill")
                             SettingsRow(.updateAvailableTitle) {

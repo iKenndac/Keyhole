@@ -30,6 +30,29 @@ import AppKit
             if !automaticallyCheckForUpdates { updateAvailable = false }
         }
     }
+    
+    /// Returns `true` if the autoupdater is allowed to work.
+    var executionEnvironmentAllowsUpdates: Bool {
+        return !isRunningOnReadOnlyVolume && !isRunningTranslocated
+    }
+
+    @ObservationIgnored lazy var isRunningOnReadOnlyVolume: Bool = {
+        // Ported from SUHost in Sparkle (which isn't public API).
+        let bundle = Bundle(for: type(of: self))
+        let path: String = bundle.bundlePath
+        guard let path: [CChar] = path.cString(using: .utf8) else { return false }
+        var statBuffer = statfs()
+        let resultCode: Int32 = statfs(path, &statBuffer)
+        guard resultCode == 0 else { return false }
+        return (statBuffer.f_flags & UInt32(MNT_RDONLY)) != 0
+    }()
+
+    @ObservationIgnored lazy var isRunningTranslocated: Bool = {
+        // Ported from SUHost in Sparkle (which isn't public API).
+        let bundle = Bundle(for: type(of: self))
+        let path: String = bundle.bundlePath
+        return isRunningOnReadOnlyVolume && path.localizedCaseInsensitiveContains("/AppTranslocation/")
+    }()
 
     // MARK: - Delegates
 

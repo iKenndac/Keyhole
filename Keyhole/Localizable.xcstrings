@@ -465,6 +465,17 @@
         }
       }
     },
+    "UpdatesUnavailableTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to check for updates!"
+          }
+        }
+      }
+    },
     "UtilitiesSectionTitle" : {
       "extractionState" : "manual",
       "localizations" : {
