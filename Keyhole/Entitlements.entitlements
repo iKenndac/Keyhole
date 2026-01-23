@@ -12,6 +12,7 @@
 	<array>
 		<string>com.apple.Music</string>
 		<string>com.spotify.client</string>
+		<string>co.brushedtype.doppler-macos</string>
 	</array>
 	<key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
 	<array>
