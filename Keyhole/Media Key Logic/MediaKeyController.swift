@@ -41,7 +41,7 @@ extension UserDefaultsKey {
     let integrations: [any MediaAppIntegration]
 
     init() {
-        integrations = [MusicAppIntegration(), SpotifyAppIntegration()]
+        integrations = [MusicAppIntegration(), SpotifyAppIntegration(), DopplerAppIntegration()]
 
         let preferredBundleId = UserDefaults.standard.value(for: .preferredTargetBundleId)
         let targets = integrations.filter({ $0.isInstalled }).map({ AvailableTarget(appName: $0.appName, bundleId: $0.bundleId) })
