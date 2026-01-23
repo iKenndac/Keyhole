@@ -113,46 +113,48 @@ struct SettingsView: View {
                 }
             }, header: { Text(.mediaKeyHandlingSectionTitle).bold().padding(.top, formSectionSpacingFix) })
 
-            Section(content: {
-                VStack(alignment: .leading, spacing: 10.0) {
-                    HStack(spacing: 6.0) {
-                        Image(systemName: systemImageName(for: mediaKeyController.hasAccessibilityPermission))
-                            .symbolRenderingMode(.palette)
-                            .resizable()
-                            .frame(width: 14.0, height: 14.0)
-                            .foregroundStyle(.white, color(for: mediaKeyController.hasAccessibilityPermission).gradient)
-                        Text(.accessibilityPermissionTitle)
-                        Button(.fixPermissionButtonTitle, action: showPermissionDoctor)
-                            .onCondition(mediaKeyController.hasAccessibilityPermission, transform: { $0.hidden() })
-                    }
-
-                    ForEach(mediaKeyController.appStates) { appState in
-                        let (imageName, color, label): (String, Color, LocalizedStringResource) = {
-                            switch appState.state {
-                            case .notRunning:
-                                return ("questionmark.circle.fill", .gray.opacity(0.6), .automationPermissionNotRunningTitle(appName: appState.appName))
-                            case .runningWithDeniedAutomationAccess:
-                                return ("xmark.circle.fill", .red, .automationPermissionTitle(appName: appState.appName))
-                            case .runningWithPendingAutomationAccess:
-                                return ("questionmark.circle.fill", .gray, .automationPermissionTitle(appName: appState.appName))
-                            case .runningWithAutomationAccess:
-                                return ("checkmark.circle.fill", .green, .automationPermissionTitle(appName: appState.appName))
-                            }
-                        }()
-
+            if mediaKeyController.hasPermissionsProblem {
+                Section(content: {
+                    VStack(alignment: .leading, spacing: 10.0) {
                         HStack(spacing: 6.0) {
-                            Image(systemName: imageName)
+                            Image(systemName: systemImageName(for: mediaKeyController.hasAccessibilityPermission))
                                 .symbolRenderingMode(.palette)
                                 .resizable()
                                 .frame(width: 14.0, height: 14.0)
-                                .foregroundStyle(.white, color.gradient)
-                            Text(label)
+                                .foregroundStyle(.white, color(for: mediaKeyController.hasAccessibilityPermission).gradient)
+                            Text(.accessibilityPermissionTitle)
                             Button(.fixPermissionButtonTitle, action: showPermissionDoctor)
-                                .onCondition(appState.state != .runningWithDeniedAutomationAccess, transform: { $0.hidden() })
+                                .onCondition(mediaKeyController.hasAccessibilityPermission, transform: { $0.hidden() })
+                        }
+
+                        ForEach(mediaKeyController.appStates) { appState in
+                            let (imageName, color, label): (String, Color, LocalizedStringResource) = {
+                                switch appState.state {
+                                case .notRunning:
+                                    return ("questionmark.circle.fill", .gray.opacity(0.6), .automationPermissionNotRunningTitle(appName: appState.appName))
+                                case .runningWithDeniedAutomationAccess:
+                                    return ("xmark.circle.fill", .red, .automationPermissionTitle(appName: appState.appName))
+                                case .runningWithPendingAutomationAccess:
+                                    return ("questionmark.circle.fill", .gray, .automationPermissionTitle(appName: appState.appName))
+                                case .runningWithAutomationAccess:
+                                    return ("checkmark.circle.fill", .green, .automationPermissionTitle(appName: appState.appName))
+                                }
+                            }()
+
+                            HStack(spacing: 6.0) {
+                                Image(systemName: imageName)
+                                    .symbolRenderingMode(.palette)
+                                    .resizable()
+                                    .frame(width: 14.0, height: 14.0)
+                                    .foregroundStyle(.white, color.gradient)
+                                Text(label)
+                                Button(.fixPermissionButtonTitle, action: showPermissionDoctor)
+                                    .onCondition(appState.state != .runningWithDeniedAutomationAccess, transform: { $0.hidden() })
+                            }
                         }
                     }
-                }
-            }, header: { Text(.permissionsSectionTitle).bold().padding(.top, formSectionSpacingFix) })
+                }, header: { Text(.permissionsSectionTitle).bold().padding(.top, formSectionSpacingFix) })
+            }
         }
         .fixedSize(horizontal: false, vertical: true)
         .scrollDisabled(true)
