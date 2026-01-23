@@ -1,3 +1,5 @@
+<p align="center"><img src="Documentation%20Images/KeyholeIcon.png?raw=true" width="256" /></p>
+
 ## Keyhole
 
 Have you ever been annoyed by your Mac's media keys triggering a random video in your web browser, doing something else weird, or by them doing… nothing? Even though your music player is *right there*?

@@ -117,12 +117,13 @@ struct PermissionDoctorView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: 0.0) {
-            VStack(alignment: .center) {
+            VStack(alignment: .center, spacing: 12.0) {
                 Image(.keyholeIcon)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 128.0)
+                    .frame(width: 96.0)
                     .fixedSize()
+                    .shadow(color: .black.opacity(0.4), radius: 1.0, x: 0.5, y: 0.5)
                 VStack(alignment: .center, spacing: 8.0) {
                     Text(.permissionDoctorIntroText)
                         .padding(.horizontal, 20.0)
@@ -143,7 +144,7 @@ struct PermissionDoctorView: View {
                             .padding(.horizontal, 12.0)
                             .padding(.top, 4.0)
                             .compositingGroup()
-                            .shadow(color: .gray, radius: 1.0, x: 0.5, y: 0.5)
+                            .shadow(color: .black.opacity(0.4), radius: 1.0, x: 0.5, y: 0.5)
                         VStack(alignment: .leading, spacing: 8.0) {
                             Text(.accessibilityPermissionTitle).bold()
                             Text(.permissionDoctorAccessibilityText)

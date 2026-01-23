@@ -1,6 +1,29 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "AboutIconByPrefix" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon by"
+          }
+        }
+      }
+    },
+    "AboutIconLinkTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matthew Skiles"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "AboutMenuItemTitle" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -17,6 +17,7 @@
 		502BC9612F20156B008C33A3 /* OSSLicenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = 502BC9602F20144D008C33A3 /* OSSLicenses.txt */; };
 		502BC9782F211621008C33A3 /* PermissionDoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC9772F21161B008C33A3 /* PermissionDoctorView.swift */; };
 		502BC9982F212C8F008C33A3 /* SwiftUI+Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC9972F212C8F008C33A3 /* SwiftUI+Conditions.swift */; };
+		507B79E62F23A798006C628C /* Keyhole.icon in Resources */ = {isa = PBXBuildFile; fileRef = 507B79E52F23A798006C628C /* Keyhole.icon */; };
 		50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D12F1D092B000E5F7D /* MediaKeyController.swift */; };
 		50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */; };
 		50C768DA2F1D092B000E5F7D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D42F1D092B000E5F7D /* App.swift */; };
@@ -33,7 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		502BC8EA2F1D36A5008C33A3 /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.md; sourceTree = "<group>"; };
 		502BC90A2F1E2661008C33A3 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySwiftScriptingBridge.swift; sourceTree = "<group>"; };
 		502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAppIntegration.swift; sourceTree = "<group>"; };
@@ -45,6 +45,7 @@
 		502BC9772F21161B008C33A3 /* PermissionDoctorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionDoctorView.swift; sourceTree = "<group>"; };
 		502BC9972F212C8F008C33A3 /* SwiftUI+Conditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Conditions.swift"; sourceTree = "<group>"; };
 		507B79E42F2290F4006C628C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		507B79E52F23A798006C628C /* Keyhole.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Keyhole.icon; sourceTree = "<group>"; };
 		50C768B42F1CE7E8000E5F7D /* Keyhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C768D12F1D092B000E5F7D /* MediaKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyController.swift; sourceTree = "<group>"; };
 		50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyWatcher.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				507B79E42F2290F4006C628C /* README.md */,
-				502BC8EA2F1D36A5008C33A3 /* TODO.md */,
 				50C7692D2F1D2228000E5F7D /* Shared Settings.xcconfig */,
 				50C768D72F1D092B000E5F7D /* Keyhole */,
 				50C768B52F1CE7E8000E5F7D /* Products */,
@@ -123,6 +123,7 @@
 				50C768D32F1D092B000E5F7D /* Media Key Logic */,
 				50C768E02F1D0C40000E5F7D /* App Integrations */,
 				50C769312F1D2602000E5F7D /* Utilities */,
+				507B79E52F23A798006C628C /* Keyhole.icon */,
 				50C768D52F1D092B000E5F7D /* Assets.xcassets */,
 				502BC9602F20144D008C33A3 /* OSSLicenses.txt */,
 				50C768DE2F1D0C11000E5F7D /* Localizable.xcstrings */,
@@ -251,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507B79E62F23A798006C628C /* Keyhole.icon in Resources */,
 				502BC9612F20156B008C33A3 /* OSSLicenses.txt in Resources */,
 				50C768DF2F1D0C11000E5F7D /* Localizable.xcstrings in Resources */,
 				50C768DC2F1D092B000E5F7D /* Assets.xcassets in Resources */,
@@ -435,8 +437,7 @@
 		50C768C02F1CE7E9000E5F7D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Keyhole;
 				AUTOMATION_APPLE_EVENTS = YES;
 				CODE_SIGN_ENTITLEMENTS = Keyhole/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,8 +469,7 @@
 		50C768C12F1CE7E9000E5F7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Keyhole;
 				AUTOMATION_APPLE_EVENTS = YES;
 				CODE_SIGN_ENTITLEMENTS = Keyhole/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;

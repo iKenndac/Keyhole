@@ -19,29 +19,35 @@ struct AboutView: View {
 
     var body: some View {
         VStack(spacing: 14.0) {
-            VStack(spacing: 0.0) {
+            VStack(spacing: 6.0) {
                 Image(.keyholeIcon)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 128.0)
+                    .frame(width: 96.0)
                     .fixedSize(horizontal: true, vertical: true)
+                    .shadow(color: .black.opacity(0.4), radius: 1.0, x: 0.5, y: 0.5)
                 Text(.appName)
                     .font(.title)
                     .bold()
+                VStack(spacing: 4.0) {
+                    Text(versionString)
+                    Text(verbatim: copyrightString)
+                }
+                .font(.callout)
             }
-            .allowsHitTesting(false)
-            VStack(spacing: 4.0) {
-                Text(versionString)
-                Text(verbatim: copyrightString)
-            }
-            .font(.callout)
             .allowsHitTesting(false)
             Link(.aboutWindowWebsiteButtonTitle, destination: URL(string: "https://ikennd.ac/keyhole/")!)
+            HStack(spacing: 4.0) {
+                Text(.aboutIconByPrefix)
+                Link(.aboutIconLinkTitle, destination: URL(string: "https://matthewskiles.com")!)
+            }
             Button(.openSourceLicensesButtonTitle, action: { showingOSSLicenses = true })
                 .controlSize(.small)
+                .padding(.top, 4.0)
         }
         .sheet(isPresented: $showingOSSLicenses, content: { LicensesView() })
         .padding(.horizontal, 30.0)
+        .padding(.top, 10.0)
         .padding(.bottom, 30.0)
         .frame(width: 300.0)
     }
