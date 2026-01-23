@@ -24,7 +24,7 @@ If you'd like to help but don't know what those words mean, [open up an issue](h
 
 ### Supported Media Players
 
-Keyhole currently supports Spotify and the Music app built-in to your Mac.
+Keyhole currently supports Spotify, Doppler, and the Music app built-in to your Mac.
 
 ### How To Ask For A New Media Player
 
