@@ -43,6 +43,8 @@ struct KeyholeApp: App {
                 .containerBackground(.regularMaterial, for: .window)
         }
         .menuBarExtraStyle(.window)
+        .defaultLaunchBehavior(.presented)
+        .restorationBehavior(.disabled)
         .commands {
             CommandGroup(replacing: .appInfo) {
                 // Probably unneeded since we're an agent, but oh well.
