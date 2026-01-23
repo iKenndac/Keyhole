@@ -37,8 +37,11 @@ func launchAndCheckScriptingAccess(for bundleId: String, allowUserPrompt: Bool,
     let isAlreadyRunning = (workspace.runningApplications.first(where: { $0.bundleIdentifier == bundleId }) != nil)
 
     if isAlreadyRunning {
-        let result = checkScriptingAccess(for: bundleId, allowUserPrompt: allowUserPrompt)
-        DispatchQueue.main.async { completionHandler(result) }
+        // checkScriptingAccess() on the main thread is a bad time.
+        DispatchQueue.global(qos: .userInitiated).async {
+            let result = checkScriptingAccess(for: bundleId, allowUserPrompt: allowUserPrompt)
+            DispatchQueue.main.async { completionHandler(result) }
+        }
         return
     }
 
@@ -55,12 +58,14 @@ func launchAndCheckScriptingAccess(for bundleId: String, allowUserPrompt: Bool,
     config.promptsUserIfNeeded = allowUserPrompt
 
     workspace.openApplication(at: url, configuration: config, completionHandler: { app, error in
-        DispatchQueue.main.async {
-            if app != nil {
-                completionHandler(checkScriptingAccess(for: bundleId, allowUserPrompt: allowUserPrompt))
-            } else {
-                completionHandler(.checkFailed)
+        if app != nil {
+            // checkScriptingAccess() on the main thread is a bad time.
+            DispatchQueue.global(qos: .userInitiated).async {
+                let state = checkScriptingAccess(for: bundleId, allowUserPrompt: allowUserPrompt)
+                DispatchQueue.main.async { completionHandler(state) }
             }
+        } else {
+            DispatchQueue.main.async { completionHandler(.checkFailed) }
         }
     })
 }
@@ -75,6 +80,12 @@ func checkScriptingAccess(for bundleId: String, allowUserPrompt: Bool) -> Script
     guard #available(OSX 10.14, *) else {
         // Earlier OS versions don't have access control over Apple Events.
         return .available
+    }
+
+    if allowUserPrompt {
+        // From the docs: Do not call this function on your main thread because it may take arbitrarily long
+        // to return if the user needs to be prompted for consent.
+        assert(!Thread.isMainThread)
     }
 
     guard let desc = NSAppleEventDescriptor(bundleIdentifier: bundleId).aeDesc else { return .checkFailed }
