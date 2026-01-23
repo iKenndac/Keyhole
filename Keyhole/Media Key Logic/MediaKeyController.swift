@@ -239,10 +239,8 @@ extension UserDefaultsKey {
             do {
                 switch key {
                 case .playPause: try target.playPause()
-                case .previousTrack: try target.skipBack()
-                case .nextTrack: try target.skipForward()
-                case .fastForward: break
-                case .rewind: break
+                case .previousTrack, .rewind: try target.skipBack()
+                case .nextTrack, .fastForward: try target.skipForward()
                 }
                 LogVerbose("…command sent to running process successfully.")
             } catch {
