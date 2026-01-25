@@ -198,7 +198,7 @@ struct PermissionDoctorView: View {
         }
         .padding(.bottom, 20.0)
         .frame(width: 600.0)
-        .onCondition(scrollablePermissionsArea) { $0.frame(minHeight: 650.0) }
+        .onCondition(scrollablePermissionsArea) { $0.frame(height: 650.0) }
         .onAppear {
             // Being a menu extra means the app doesn't come frontmost when the UI is shown, so we need to help out a bit.
             // Since this window is *big* and having it be floating like our other windows is kinda rude, let's be a

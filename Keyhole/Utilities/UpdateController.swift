@@ -16,7 +16,7 @@ import AppKit
     
     /// Perform an explicit "Check for updates" action by the user. Will display dialogs.
     func checkForUpdates() {
-        NSApplication.shared.activate()
+        NSApplication.shared.activate(ignoringOtherApps: true)
         sparkle.checkForUpdates(nil)
     }
     

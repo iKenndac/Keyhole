@@ -11,7 +11,7 @@ struct SettingsView: View {
     private let formSectionSpacingFix: CGFloat = -12.0
 
     private func showPermissionDoctor() {
-        NSApplication.shared.activate()
+        NSApplication.shared.activate(ignoringOtherApps: true)
         openWindow(id: KeyholeApp.WindowId.permissionDoctor)
     }
 
@@ -135,13 +135,13 @@ struct SettingsView: View {
                                 case .runningWithDeniedAutomationAccess:
                                     return ("xmark.circle.fill", .red, .automationPermissionTitle(appName: appState.appName))
                                 case .runningWithPendingAutomationAccess:
-                                    return ("questionmark.circle.fill", .gray, .automationPermissionTitle(appName: appState.appName))
+                                    return ("questionmark.circle.fill", .gray.opacity(0.6), .automationPermissionTitle(appName: appState.appName))
                                 case .runningWithAutomationAccess:
                                     return ("checkmark.circle.fill", .green, .automationPermissionTitle(appName: appState.appName))
                                 }
                             }()
 
-                            HStack(spacing: 6.0) {
+                            HStack(alignment: .center, spacing: 6.0) {
                                 Image(systemName: imageName)
                                     .symbolRenderingMode(.palette)
                                     .resizable()
@@ -191,7 +191,7 @@ struct SettingsRow<V: View>: View {
     @ViewBuilder let content: () -> V
 
     var body: some View {
-        HStack {
+        HStack(alignment: .firstTextBaseline) {
             Text(label)
             Spacer(minLength: 0.0)
             content()
