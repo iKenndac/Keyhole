@@ -10,11 +10,15 @@ struct KeyholeApp: App {
 
     let mediaKeyController: MediaKeyController
     let updateController: UpdateController
+    let appleScriptAPI: KeyholeAppleScriptAPI
     @Environment(\.openWindow) var openWindow
 
     init() {
+        appleScriptAPI = KeyholeAppleScriptAPI()
         mediaKeyController = MediaKeyController()
         updateController = UpdateController()
+        // The AppleScript API object needs to be set up before anything else, so dependencies get given later.
+        appleScriptAPI.setup(with: mediaKeyController)
     }
 
     var autoShowPermissionDoctor: Bool {

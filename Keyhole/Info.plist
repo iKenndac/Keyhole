@@ -42,5 +42,11 @@
 	<string>BcSIhC94WKpzafEfDtiRz7SPonEi00yjYTEBfL3LLIo=</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>NSPrincipalClass</key>
+	<string>ScriptableApplication</string>
+	<key>NSAppleScriptEnabled</key>
+	<true/>
+	<key>OSAScriptingDefinition</key>
+	<string>Keyhole.sdef</string>
 </dict>
 </plist>

@@ -52,7 +52,10 @@ extension UserDefaultsKey {
         targetNotRunningAction = UserDefaults.standard.value(for: .targetNotRunningAction)
         enabled = UserDefaults.standard.value(for: .mediaKeyListeningEnabled)
         keyWatcher = MediaKeyWatcher()
-        keyWatcher.keyHandler = handleMediaKey
+        keyWatcher.keyHandler = { [weak self] _, key, isDown in
+            guard let self else { return .propagateEvent }
+            return self.handleMediaKey(key: key, isDown: isDown)
+        }
         updateAccessibilityState()
         setupObservations()
         updateAppStates()
@@ -79,7 +82,15 @@ extension UserDefaultsKey {
     }
     
     /// The currently pressed key, if any.
-    var currentlyPressedKey: MediaKey?
+    private(set) var currentlyPressedKey: MediaKey?
+    
+    /// "Virtually" press and release a key.
+    func simulatePressAndRelease(of key: MediaKey) {
+        _ = handleMediaKey(key: key, isDown: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            _ = self.handleMediaKey(key: key, isDown: false)
+        }
+    }
 
     /// Returns `true` if the app has accessibility permissions, otherwise `false`.
     private(set) var hasAccessibilityPermission: Bool = false
@@ -187,7 +198,7 @@ extension UserDefaultsKey {
         }
     }
 
-    private func handleMediaKey(from watcher: MediaKeyWatcher, key: MediaKey, isDown: Bool) -> MediaKeyHandlingResult {
+    private func handleMediaKey(key: MediaKey, isDown: Bool) -> MediaKeyHandlingResult {
         currentlyPressedKey = (isDown ? key : nil)
 
         guard let target: any MediaAppIntegration = {

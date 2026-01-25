@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50203AC32F261F80001A4D3A /* Keyhole.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 50203AC22F261F80001A4D3A /* Keyhole.sdef */; };
+		50203AED2F2621D6001A4D3A /* AppleScriptAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50203AEC2F2621D3001A4D3A /* AppleScriptAPI.swift */; };
 		502BC90C2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */; };
 		502BC90E2F1E2776008C33A3 /* SpotifyAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */; };
 		502BC9102F1E281F008C33A3 /* ScriptableAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50203AC22F261F80001A4D3A /* Keyhole.sdef */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Keyhole.sdef; sourceTree = "<group>"; };
+		50203AEC2F2621D3001A4D3A /* AppleScriptAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleScriptAPI.swift; sourceTree = "<group>"; };
 		502BC90A2F1E2661008C33A3 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySwiftScriptingBridge.swift; sourceTree = "<group>"; };
 		502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAppIntegration.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				50C768E02F1D0C40000E5F7D /* App Integrations */,
 				50C769312F1D2602000E5F7D /* Utilities */,
 				507B79E52F23A798006C628C /* Keyhole.icon */,
+				50203AC22F261F80001A4D3A /* Keyhole.sdef */,
 				50C768D52F1D092B000E5F7D /* Assets.xcassets */,
 				502BC9602F20144D008C33A3 /* OSSLicenses.txt */,
 				50C768DE2F1D0C11000E5F7D /* Localizable.xcstrings */,
@@ -179,6 +184,7 @@
 		50C769312F1D2602000E5F7D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				50203AEC2F2621D3001A4D3A /* AppleScriptAPI.swift */,
 				502BC95E2F2005B6008C33A3 /* UpdateController.swift */,
 				50C769322F1D260C000E5F7D /* UserDefaultsExtensions.swift */,
 				502BC9392F1FF073008C33A3 /* Logging.swift */,
@@ -254,6 +260,7 @@
 			files = (
 				507B79E62F23A798006C628C /* Keyhole.icon in Resources */,
 				502BC9612F20156B008C33A3 /* OSSLicenses.txt in Resources */,
+				50203AC32F261F80001A4D3A /* Keyhole.sdef in Resources */,
 				50C768DF2F1D0C11000E5F7D /* Localizable.xcstrings in Resources */,
 				50C768DC2F1D092B000E5F7D /* Assets.xcassets in Resources */,
 			);
@@ -289,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50203AED2F2621D6001A4D3A /* AppleScriptAPI.swift in Sources */,
 				502BC93C2F1FF534008C33A3 /* AboutView.swift in Sources */,
 				502BC9782F211621008C33A3 /* PermissionDoctorView.swift in Sources */,
 				502BC95F2F2005BC008C33A3 /* UpdateController.swift in Sources */,
