@@ -329,7 +329,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Without permission to use Accessibility and to automate at least one media player, Keyhole won't work correctly.\\n\\nYou can grant these permissions later from the Keyhole icon in your menu bar."
+            "value" : "Without permission to use Accessibility and to automate at least one media player, Keyhole won't work correctly.\n\nYou can grant these permissions later from the Keyhole icon in your menu bar."
           }
         }
       }
