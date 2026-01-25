@@ -84,6 +84,5 @@ struct KeyholeApp: App {
         .windowResizability(.contentSize)
         .restorationBehavior(.disabled)
         .windowManagerRole(.associated)
-        .windowLevel(.floating)
     }
 }

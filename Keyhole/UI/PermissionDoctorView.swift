@@ -66,6 +66,12 @@ struct PermissionDoctorView: View {
     @State var showingMissingPermissionsSheet: Bool = false
     @State var showingGoodToGoSheet: Bool = false
     @Environment(\.dismissWindow) var dismissWindow
+    
+    var scrollablePermissionsArea: Bool {
+        // If the user has more than a couple of supported apps installed, we'll get out of hand quite quickly
+        // if we don't allow the list to scroll. Otherwise, prefer to show everything.
+        return mediaKeyController.appStates.count > 2
+    }
 
     func performContinueAction() {
         let isGoodToGo: Bool = (mediaKeyController.hasAccessibilityPermission &&
@@ -116,7 +122,7 @@ struct PermissionDoctorView: View {
     }
 
     var body: some View {
-        VStack(alignment: .center, spacing: 0.0) {
+        VStack(alignment: .center, spacing: scrollablePermissionsArea ? 10.0 : 0.0) {
             VStack(alignment: .center, spacing: 12.0) {
                 Image(.keyholeIcon)
                     .resizable()
@@ -180,8 +186,8 @@ struct PermissionDoctorView: View {
                     }
                 }
             }
-            .fixedSize(horizontal: false, vertical: true)
-            .scrollDisabled(true)
+            .fixedSize(horizontal: false, vertical: !scrollablePermissionsArea)
+            .scrollDisabled(!scrollablePermissionsArea)
             .scrollBounceBehavior(.basedOnSize)
             .formStyle(.grouped)
 
@@ -192,9 +198,20 @@ struct PermissionDoctorView: View {
         }
         .padding(.bottom, 20.0)
         .frame(width: 600.0)
-        // Being a menu extra means the app doesn't come frontmost when the UI is shown, so we need to help out a bit
-        .onAppear { mediaKeyController.noteUIShown() }
-        .onDisappear { UserDefaults.standard.setValue(true, for: .hasCompletedOnboarding) }
+        .onCondition(scrollablePermissionsArea) { $0.frame(minHeight: 650.0) }
+        .onAppear {
+            // Being a menu extra means the app doesn't come frontmost when the UI is shown, so we need to help out a bit.
+            // Since this window is *big* and having it be floating like our other windows is kinda rude, let's be a
+            // normal app for a bit.
+            NSApplication.shared.setActivationPolicy(.regular)
+            // This is kinda gross, but since we're usually an accessory app we'll appear behind whatever window is
+            // currently active unless we force our way to the front.
+            NSApplication.shared.activate(ignoringOtherApps: true)
+        }
+        .onDisappear {
+            UserDefaults.standard.setValue(true, for: .hasCompletedOnboarding)
+            NSApplication.shared.setActivationPolicy(.accessory)
+        }
         .alert(.permissionDoctorMissingPermissionAlertTitle, isPresented: $showingMissingPermissionsSheet, actions: {
             Button(role: .cancel, action: { showingMissingPermissionsSheet = false }, label: { Text(.cancelButtonTitle) })
             Button(role: nil, action: {
