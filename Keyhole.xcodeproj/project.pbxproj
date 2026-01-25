@@ -11,6 +11,8 @@
 		50203AED2F2621D6001A4D3A /* AppleScriptAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50203AEC2F2621D3001A4D3A /* AppleScriptAPI.swift */; };
 		50203B062F264D44001A4D3A /* DopplerSwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50203B042F264D44001A4D3A /* DopplerSwiftScriptingBridge.swift */; };
 		50203B072F264D44001A4D3A /* DopplerAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50203B032F264D44001A4D3A /* DopplerAppIntegration.swift */; };
+		50203B0B2F265119001A4D3A /* CogAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50203B0A2F265119001A4D3A /* CogAppIntegration.swift */; };
+		50203B0D2F26511F001A4D3A /* CogSwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50203B0C2F26511F001A4D3A /* CogSwiftScriptingBridge.swift */; };
 		502BC90C2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */; };
 		502BC90E2F1E2776008C33A3 /* SpotifyAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */; };
 		502BC9102F1E281F008C33A3 /* ScriptableAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */; };
@@ -43,6 +45,9 @@
 		50203B022F264D44001A4D3A /* Doppler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Doppler.h; sourceTree = "<group>"; };
 		50203B032F264D44001A4D3A /* DopplerAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DopplerAppIntegration.swift; sourceTree = "<group>"; };
 		50203B042F264D44001A4D3A /* DopplerSwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DopplerSwiftScriptingBridge.swift; sourceTree = "<group>"; };
+		50203B092F265115001A4D3A /* Cog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cog.h; sourceTree = "<group>"; };
+		50203B0A2F265119001A4D3A /* CogAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogAppIntegration.swift; sourceTree = "<group>"; };
+		50203B0C2F26511F001A4D3A /* CogSwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CogSwiftScriptingBridge.swift; sourceTree = "<group>"; };
 		502BC90A2F1E2661008C33A3 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySwiftScriptingBridge.swift; sourceTree = "<group>"; };
 		502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAppIntegration.swift; sourceTree = "<group>"; };
@@ -87,24 +92,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		50203B052F264D44001A4D3A /* Doppler App Integration */ = {
+		50203B052F264D44001A4D3A /* Doppler */ = {
 			isa = PBXGroup;
 			children = (
 				50203B022F264D44001A4D3A /* Doppler.h */,
 				50203B032F264D44001A4D3A /* DopplerAppIntegration.swift */,
 				50203B042F264D44001A4D3A /* DopplerSwiftScriptingBridge.swift */,
 			);
-			path = "Doppler App Integration";
+			path = Doppler;
 			sourceTree = "<group>";
 		};
-		502BC9092F1E264F008C33A3 /* Spotify App Integration */ = {
+		50203B082F265100001A4D3A /* Cog */ = {
+			isa = PBXGroup;
+			children = (
+				50203B092F265115001A4D3A /* Cog.h */,
+				50203B0A2F265119001A4D3A /* CogAppIntegration.swift */,
+				50203B0C2F26511F001A4D3A /* CogSwiftScriptingBridge.swift */,
+			);
+			path = Cog;
+			sourceTree = "<group>";
+		};
+		502BC9092F1E264F008C33A3 /* Spotify */ = {
 			isa = PBXGroup;
 			children = (
 				502BC90A2F1E2661008C33A3 /* Spotify.h */,
 				502BC90B2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift */,
 				502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */,
 			);
-			path = "Spotify App Integration";
+			path = Spotify;
 			sourceTree = "<group>";
 		};
 		50C768AB2F1CE7E8000E5F7D = {
@@ -170,22 +185,23 @@
 			children = (
 				50C768E12F1D0C4A000E5F7D /* MediaAppIntegration.swift */,
 				502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */,
-				50203B052F264D44001A4D3A /* Doppler App Integration */,
-				502BC9092F1E264F008C33A3 /* Spotify App Integration */,
-				50C768E32F1D0C6B000E5F7D /* Music App Integration */,
+				50203B082F265100001A4D3A /* Cog */,
+				50203B052F264D44001A4D3A /* Doppler */,
+				502BC9092F1E264F008C33A3 /* Spotify */,
+				50C768E32F1D0C6B000E5F7D /* Music */,
 				50C769022F1D0CA9000E5F7D /* Scripting Bridge Helpers */,
 			);
 			path = "App Integrations";
 			sourceTree = "<group>";
 		};
-		50C768E32F1D0C6B000E5F7D /* Music App Integration */ = {
+		50C768E32F1D0C6B000E5F7D /* Music */ = {
 			isa = PBXGroup;
 			children = (
 				50C769072F1D0D91000E5F7D /* Music.h */,
 				50C769082F1D0DAA000E5F7D /* MusicAppSwiftScriptingBridge.swift */,
 				50C7690A2F1D1117000E5F7D /* MusicAppIntegration.swift */,
 			);
-			path = "Music App Integration";
+			path = Music;
 			sourceTree = "<group>";
 		};
 		50C769022F1D0CA9000E5F7D /* Scripting Bridge Helpers */ = {
@@ -317,8 +333,10 @@
 				50203B072F264D44001A4D3A /* DopplerAppIntegration.swift in Sources */,
 				502BC93C2F1FF534008C33A3 /* AboutView.swift in Sources */,
 				502BC9782F211621008C33A3 /* PermissionDoctorView.swift in Sources */,
+				50203B0D2F26511F001A4D3A /* CogSwiftScriptingBridge.swift in Sources */,
 				502BC95F2F2005BC008C33A3 /* UpdateController.swift in Sources */,
 				502BC9982F212C8F008C33A3 /* SwiftUI+Conditions.swift in Sources */,
+				50203B0B2F265119001A4D3A /* CogAppIntegration.swift in Sources */,
 				50C769092F1D0DAE000E5F7D /* MusicAppSwiftScriptingBridge.swift in Sources */,
 				502BC93A2F1FF073008C33A3 /* Logging.swift in Sources */,
 				50C769302F1D237A000E5F7D /* ModelUIExtensions.swift in Sources */,
