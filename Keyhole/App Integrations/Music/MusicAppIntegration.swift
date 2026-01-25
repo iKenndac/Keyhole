@@ -4,7 +4,7 @@ import Observation
 @MainActor @Observable class MusicAppIntegration: ScriptableAppIntegration<MusicApplication> {
 
     override class var bundleId: String { return "com.apple.Music" }
-    override class var appName: String { return "Music" } // Localised?
+    override class var appName: String { return "Music" }
 
     override func playPause() throws(MediaAppCommandError) {
         try scriptableApp().playpause?()

@@ -5,7 +5,7 @@ import ScriptingBridge
 @MainActor @Observable class SpotifyAppIntegration: ScriptableAppIntegration<SpotifyApplication> {
 
     override class var bundleId: String { return "com.spotify.client" }
-    override class var appName: String { return "Spotify" } // Localised?
+    override class var appName: String { return "Spotify" }
 
     override func playPause() throws(MediaAppCommandError) {
         try scriptableApp().playpause?()
