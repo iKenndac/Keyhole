@@ -155,20 +155,24 @@ class ScriptingBridgeSession<T: SBApplicationProtocol> {
             return
         }
 
-        switch checkScriptingAccess(for: bundleId, allowUserPrompt: false) {
-        case .checkFailed: sessionState = .notRunning
-        case .pendingAuthorisation: sessionState = .runningWithPendingScriptingAccess
-        case .denied: sessionState = .runningWithDeniedScriptingAccess
-        case .available:
-            // We don't want to replace an already-existing SBApplication instance.
-            if !sessionState.isRunningWithScriptingAccess {
-                guard let sbApp = SBApplication(bundleIdentifier: bundleId) as? T else {
-                    sessionState = .runningWithDeniedScriptingAccess
-                    break
+        checkScriptingAccess(for: bundleId, allowUserPrompt: false, completionHandler: { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .checkFailed: sessionState = .notRunning
+            case .pendingAuthorisation: sessionState = .runningWithPendingScriptingAccess
+            case .denied: sessionState = .runningWithDeniedScriptingAccess
+            case .available:
+                // We don't want to replace an already-existing SBApplication instance.
+                if !sessionState.isRunningWithScriptingAccess {
+                    guard let sbApp = SBApplication(bundleIdentifier: bundleId) as? T else {
+                        sessionState = .runningWithDeniedScriptingAccess
+                        break
+                    }
+                    sessionState = .runningWithScriptingAccess(application: sbApp)
                 }
-                sessionState = .runningWithScriptingAccess(application: sbApp)
             }
-        }
+            fireObservers(from: oldState, to: sessionState)
+        })
     }
 
     private func fireObservers(from oldState: State, to newState: State) {

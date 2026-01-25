@@ -70,23 +70,43 @@ func launchAndCheckScriptingAccess(for bundleId: String, allowUserPrompt: Bool,
     })
 }
 
+/// Checks if a given application has scripting access. If the application isn't launching
+///
+/// - Parameter bundleId: The bundle ID of the target application.
+/// - Parameter allowUserPrompt: Allow prompting for scripting access to the target application.
+/// - Parameter completionHandler: The completion handler, to be called on the main queue, with the result.
+/// - Returns: Returns a `ScriptingAccess` value reflecting the automation status of the application.
+func checkScriptingAccess(for bundleId: String, allowUserPrompt: Bool,
+                          completionHandler: @escaping (ScriptingAccess) -> Void) {
+    let workspace = NSWorkspace.shared
+    let isRunning = (workspace.runningApplications.first(where: { $0.bundleIdentifier == bundleId }) != nil)
+    guard isRunning else {
+        completionHandler(.checkFailed)
+        return
+    }
+
+    // checkScriptingAccess() on the main thread is a bad time.
+    DispatchQueue.global(qos: .userInitiated).async {
+        let state = checkScriptingAccess(for: bundleId, allowUserPrompt: allowUserPrompt)
+        DispatchQueue.main.async { completionHandler(state) }
+    }
+}
+
 /// Checks the scripting access the running application has to the target application.
 ///
 /// - Parameter bundleId: The bundle ID of the target application.
 /// - Parameter allowUserPrompt: Allow prompting for scripting access to the target application.
 /// - Returns: Returns a `ScriptingAccess` value reflecting the automation status of the application, including `.checkFailed` if the application isn't running.
-func checkScriptingAccess(for bundleId: String, allowUserPrompt: Bool) -> ScriptingAccess {
+fileprivate func checkScriptingAccess(for bundleId: String, allowUserPrompt: Bool) -> ScriptingAccess {
 
     guard #available(OSX 10.14, *) else {
         // Earlier OS versions don't have access control over Apple Events.
         return .available
     }
 
-    if allowUserPrompt {
-        // From the docs: Do not call this function on your main thread because it may take arbitrarily long
-        // to return if the user needs to be prompted for consent.
-        assert(!Thread.isMainThread)
-    }
+    // From the docs: Do not call this function on your main thread because it may take arbitrarily long
+    // to return if the user needs to be prompted for consent.
+    assert(!Thread.isMainThread)
 
     guard let desc = NSAppleEventDescriptor(bundleIdentifier: bundleId).aeDesc else { return .checkFailed }
     let result: OSStatus = AEDeterminePermissionToAutomateTarget(desc, typeWildCard, typeWildCard, allowUserPrompt)
