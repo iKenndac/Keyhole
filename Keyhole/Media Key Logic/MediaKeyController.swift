@@ -42,6 +42,7 @@ extension UserDefaultsKey {
 
     init() {
         integrations = [MusicAppIntegration(), SpotifyAppIntegration(), DopplerAppIntegration(), CogAppIntegration()]
+            .sorted(by: { $0.appName.caseInsensitiveCompare($1.appName) == .orderedAscending })
 
         let preferredBundleId = UserDefaults.standard.value(for: .preferredTargetBundleId)
         let targets = integrations.filter({ $0.isInstalled }).map({ AvailableTarget(appName: $0.appName, bundleId: $0.bundleId) })
