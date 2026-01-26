@@ -28,7 +28,7 @@ Keyhole currently supports [Cog][cog], [Doppler][doppler], [Spotify][spotify], a
 
 [cog]: https://cog.losno.co
 [doppler]: https://brushedtype.co/doppler/
-[spotify]: https://www.spotify.com/us/download/mac/
+[spotify]: https://www.spotify.com/download/mac/
 
 ### How To Ask For A New Media Player
 
