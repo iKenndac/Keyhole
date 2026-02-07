@@ -24,7 +24,7 @@ If you'd like to help but don't know what those words mean, [open up an issue](h
 
 ### Supported Media Players
 
-Keyhole currently supports Cog, Doppler, Spotify, and the Music app built-in to your Mac.
+Keyhole currently supports Cog, Doppler, Radiccio, Spotify, and the Music app built-in to your Mac.
 
 ### How To Ask For A New Media Player
 

@@ -24,6 +24,8 @@
 		502BC9782F211621008C33A3 /* PermissionDoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC9772F21161B008C33A3 /* PermissionDoctorView.swift */; };
 		502BC9982F212C8F008C33A3 /* SwiftUI+Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC9972F212C8F008C33A3 /* SwiftUI+Conditions.swift */; };
 		507B79E62F23A798006C628C /* Keyhole.icon in Resources */ = {isa = PBXBuildFile; fileRef = 507B79E52F23A798006C628C /* Keyhole.icon */; };
+		509A72AE2F37F49800D74B3E /* RadiccioSwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A72AD2F37F49800D74B3E /* RadiccioSwiftScriptingBridge.swift */; };
+		509A72B02F37F59800D74B3E /* RadiccioAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A72AF2F37F59800D74B3E /* RadiccioAppIntegration.swift */; };
 		50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D12F1D092B000E5F7D /* MediaKeyController.swift */; };
 		50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */; };
 		50C768DA2F1D092B000E5F7D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D42F1D092B000E5F7D /* App.swift */; };
@@ -60,6 +62,9 @@
 		502BC9972F212C8F008C33A3 /* SwiftUI+Conditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Conditions.swift"; sourceTree = "<group>"; };
 		507B79E42F2290F4006C628C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		507B79E52F23A798006C628C /* Keyhole.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Keyhole.icon; sourceTree = "<group>"; };
+		509A72AC2F37F49500D74B3E /* Radiccio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Radiccio.h; sourceTree = "<group>"; };
+		509A72AD2F37F49800D74B3E /* RadiccioSwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiccioSwiftScriptingBridge.swift; sourceTree = "<group>"; };
+		509A72AF2F37F59800D74B3E /* RadiccioAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiccioAppIntegration.swift; sourceTree = "<group>"; };
 		50C768B42F1CE7E8000E5F7D /* Keyhole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keyhole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C768D12F1D092B000E5F7D /* MediaKeyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyController.swift; sourceTree = "<group>"; };
 		50C768D22F1D092B000E5F7D /* MediaKeyWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaKeyWatcher.swift; sourceTree = "<group>"; };
@@ -120,6 +125,16 @@
 				502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */,
 			);
 			path = Spotify;
+			sourceTree = "<group>";
+		};
+		509A72AB2F37F48000D74B3E /* Radiccio */ = {
+			isa = PBXGroup;
+			children = (
+				509A72AC2F37F49500D74B3E /* Radiccio.h */,
+				509A72AD2F37F49800D74B3E /* RadiccioSwiftScriptingBridge.swift */,
+				509A72AF2F37F59800D74B3E /* RadiccioAppIntegration.swift */,
+			);
+			path = Radiccio;
 			sourceTree = "<group>";
 		};
 		50C768AB2F1CE7E8000E5F7D = {
@@ -187,6 +202,7 @@
 				502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */,
 				50203B082F265100001A4D3A /* Cog */,
 				50203B052F264D44001A4D3A /* Doppler */,
+				509A72AB2F37F48000D74B3E /* Radiccio */,
 				502BC9092F1E264F008C33A3 /* Spotify */,
 				50C768E32F1D0C6B000E5F7D /* Music */,
 				50C769022F1D0CA9000E5F7D /* Scripting Bridge Helpers */,
@@ -330,6 +346,7 @@
 			files = (
 				50203AED2F2621D6001A4D3A /* AppleScriptAPI.swift in Sources */,
 				50203B062F264D44001A4D3A /* DopplerSwiftScriptingBridge.swift in Sources */,
+				509A72AE2F37F49800D74B3E /* RadiccioSwiftScriptingBridge.swift in Sources */,
 				50203B072F264D44001A4D3A /* DopplerAppIntegration.swift in Sources */,
 				502BC93C2F1FF534008C33A3 /* AboutView.swift in Sources */,
 				502BC9782F211621008C33A3 /* PermissionDoctorView.swift in Sources */,
@@ -346,6 +363,7 @@
 				502BC9102F1E281F008C33A3 /* ScriptableAppIntegration.swift in Sources */,
 				502BC90E2F1E2776008C33A3 /* SpotifyAppIntegration.swift in Sources */,
 				50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */,
+				509A72B02F37F59800D74B3E /* RadiccioAppIntegration.swift in Sources */,
 				50C769332F1D260C000E5F7D /* UserDefaultsExtensions.swift in Sources */,
 				50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */,
 				50C768DA2F1D092B000E5F7D /* App.swift in Sources */,
