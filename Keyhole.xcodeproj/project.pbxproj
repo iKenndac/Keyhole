@@ -202,9 +202,9 @@
 				502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */,
 				50203B082F265100001A4D3A /* Cog */,
 				50203B052F264D44001A4D3A /* Doppler */,
+				50C768E32F1D0C6B000E5F7D /* Music */,
 				509A72AB2F37F48000D74B3E /* Radiccio */,
 				502BC9092F1E264F008C33A3 /* Spotify */,
-				50C768E32F1D0C6B000E5F7D /* Music */,
 				50C769022F1D0CA9000E5F7D /* Scripting Bridge Helpers */,
 			);
 			path = "App Integrations";
