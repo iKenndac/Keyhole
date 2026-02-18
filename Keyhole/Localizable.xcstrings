@@ -9,6 +9,12 @@
             "state" : "translated",
             "value" : "Icon by"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône par"
+          }
         }
       }
     },
@@ -32,6 +38,12 @@
             "state" : "translated",
             "value" : "About Keyhole…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À propos de Keyhole…"
+          }
         }
       }
     },
@@ -43,6 +55,12 @@
             "state" : "translated",
             "value" : "About Keyhole"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À propos de Keyhole"
+          }
         }
       }
     },
@@ -50,6 +68,12 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %1$(version)@ (%2$(build)@, %3$(verbose)@)"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version %1$(version)@ (%2$(build)@, %3$(verbose)@)"
@@ -65,6 +89,12 @@
             "state" : "translated",
             "value" : "Keyhole Website"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Site web de Keyhole"
+          }
         }
       }
     },
@@ -76,6 +106,12 @@
             "state" : "translated",
             "value" : "Accessibility"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibilité"
+          }
         }
       }
     },
@@ -86,6 +122,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keyhole forwards your keyboard's media keys directly to your media player."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole redirige les touches multimédia de votre clavier vers votre lecteur multimédia."
           }
         }
       }
@@ -111,6 +153,12 @@
             "state" : "translated",
             "value" : "Automatically check for updates"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vérifier automatiquement les mises à jour"
+          }
         }
       }
     },
@@ -121,6 +169,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$(appName)@ isn’t running"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$(appName)@ n’est pas ouvert"
           }
         }
       }
@@ -133,6 +187,12 @@
             "state" : "translated",
             "value" : "Automation for the %1$(appName)@ app"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisation pour l’app %1$(appName)@"
+          }
         }
       }
     },
@@ -143,6 +203,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
           }
         }
       }
@@ -155,6 +221,12 @@
             "state" : "translated",
             "value" : "Check for Updates…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vérifier les mises à jour…"
+          }
         }
       }
     },
@@ -165,6 +237,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continue"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuer"
           }
         }
       }
@@ -177,6 +255,12 @@
             "state" : "translated",
             "value" : "Dismiss"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ignorer"
+          }
         }
       }
     },
@@ -187,6 +271,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enable Keyhole"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer Keyhole"
           }
         }
       }
@@ -199,6 +289,12 @@
             "state" : "translated",
             "value" : "Fix…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corriger…"
+          }
         }
       }
     },
@@ -209,6 +305,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Launch at login"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir au démarrage"
           }
         }
       }
@@ -221,6 +323,12 @@
             "state" : "translated",
             "value" : "Media Key Handling"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gestion des touches multimédia"
+          }
         }
       }
     },
@@ -231,6 +339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Open Source Licenses…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licences open source…"
           }
         }
       }
@@ -243,6 +357,12 @@
             "state" : "translated",
             "value" : "Keyhole uses the following open-source software:"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole utilise les logiciels open source suivants :"
+          }
         }
       }
     },
@@ -253,6 +373,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Keyhole needs the accessibility permission in order to listen for presses of your media keys. You can enable this permission in **Privacy & Security** → **Accessibility** in System Settings.\n\n**Note:** You may need to quit and restart Keyhole after granting permission for keypresses to be detected correctly."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole a besoin de l’autorisation d’accessibilité pour détecter les pressions sur les touches multimédia de votre clavier. Vous pouvez activer cette autorisation dans **Réglages Système** → **Confidentialité et sécurité** → **Accessibilité**.\n\n**Remarque** : Il peut être nécessaire de quitter puis de relancer Keyhole après avoir accordé l’autorisation afin que les pressions sur les touches soient correctement détectées."
           }
         }
       }
@@ -265,6 +391,12 @@
             "state" : "translated",
             "value" : "You can access Keyhole's settings by clicking the Keyhole icon in your menu bar."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous pouvez accéder aux réglages de Keyhole en cliquant sur son icône dans la barre des menus."
+          }
         }
       }
     },
@@ -275,6 +407,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "You’re all set!"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout est prêt !"
           }
         }
       }
@@ -287,6 +425,12 @@
             "state" : "translated",
             "value" : "Keyhole needs permission to automate %1$(appName)@ in order to send commands to it. You can enable this permission in **Privacy & Security** → **Automation** → **Keyhole** in System Settings."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole a besoin de l’autorisation d’automatisation pour contrôler %1$(appName)@ et lui envoyer des commandes. Vous pouvez activer cette autorisation dans **Réglages Système** → **Confidentialité et sécurité** → **Automatisation** → **Keyhole**."
+          }
         }
       }
     },
@@ -297,6 +441,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grant Permission…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accorder l’autorisation"
           }
         }
       }
@@ -309,6 +459,12 @@
             "state" : "translated",
             "value" : "Welcome! Keyhole puts you in control of your media keys by making sure they get delivered to the app you *want* them to.\n\nIn order to work correctly, Keyhole needs some permissions from macOS."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenue ! Keyhole vous permet de garder le contrôle de vos touches multimédia en veillant à ce qu’elles soient envoyées à l’app de **votre choix**.\n\nPour fonctionner correctement, Keyhole a besoin de certaines autorisations de macOS."
+          }
         }
       }
     },
@@ -319,6 +475,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I Understand"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je comprends"
           }
         }
       }
@@ -331,6 +493,12 @@
             "state" : "translated",
             "value" : "Without permission to use Accessibility and to automate at least one media player, Keyhole won't work correctly.\n\nYou can grant these permissions later from the Keyhole icon in your menu bar."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans l’autorisation d’accessibilité et l’autorisation d’automatiser au moins un lecteur multimédia, Keyhole ne pourra pas fonctionner correctement.\n\nVous pourrez accorder ces autorisations ultérieurement depuis l’icône Keyhole dans la barre des menus."
+          }
         }
       }
     },
@@ -341,6 +509,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Missing Permissions"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorisations manquantes"
           }
         }
       }
@@ -353,6 +527,12 @@
             "state" : "translated",
             "value" : "Permission Doctor"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assistant d’autorisations"
+          }
         }
       }
     },
@@ -363,6 +543,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Granted"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorisé"
           }
         }
       }
@@ -375,6 +561,12 @@
             "state" : "translated",
             "value" : "Permissions"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorisations"
+          }
         }
       }
     },
@@ -385,6 +577,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preferred media player"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecteur multimédia préféré"
           }
         }
       }
@@ -397,6 +595,12 @@
             "state" : "translated",
             "value" : "Quit Keyhole"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitter Keyhole"
+          }
         }
       }
     },
@@ -407,6 +611,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
           }
         }
       }
@@ -419,6 +629,12 @@
             "state" : "translated",
             "value" : "More Info…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus d’infos…"
+          }
         }
       }
     },
@@ -429,6 +645,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Show Permission Doctor…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher l’assistant d’autorisations…"
           }
         }
       }
@@ -441,6 +663,12 @@
             "state" : "translated",
             "value" : "Launch the app"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir l’app"
+          }
         }
       }
     },
@@ -451,6 +679,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "System default"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Système par défaut"
           }
         }
       }
@@ -463,6 +697,12 @@
             "state" : "translated",
             "value" : "If %1$(appName)@ isn’t running"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si %1$(appName)@ n’est pas ouvert"
+          }
         }
       }
     },
@@ -473,6 +713,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Do nothing"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ne rien faire"
           }
         }
       }
@@ -485,6 +731,12 @@
             "state" : "translated",
             "value" : "An update is available!"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une mise à jour est disponible !"
+          }
         }
       }
     },
@@ -496,6 +748,12 @@
             "state" : "translated",
             "value" : "Unable to check for updates!"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible de vérifier les mises à jour !"
+          }
         }
       }
     },
@@ -506,6 +764,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Utilities"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilitaires"
           }
         }
       }
