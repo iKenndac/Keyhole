@@ -26,9 +26,14 @@
             "state" : "translated",
             "value" : "Matthew Skiles"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matthew Skiles"
+          }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "AboutMenuItemTitle" : {
       "extractionState" : "manual",
@@ -141,9 +146,14 @@
             "state" : "translated",
             "value" : "Keyhole"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keyhole"
+          }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "AutomaticallyCheckForUpdatesSettingTitle" : {
       "extractionState" : "manual",
