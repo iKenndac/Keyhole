@@ -6,7 +6,7 @@ import AppKit
 /// Base class for app integrations that use AppleScript/Scripting Bridge.
 @MainActor @Observable class ScriptableAppIntegration<AppType: SBApplicationProtocol>: MediaAppIntegration, AppStateObservationDefaultImplementations {
 
-    var appName: String { return Self.appName }
+    var appName: LocalizedStringResource { return Self.appName }
     var bundleId: String { return Self.bundleId }
 
     private let scriptableAppBridge: ScriptingBridgeSession<AppType>
@@ -23,7 +23,7 @@ import AppKit
     // MARK: - Overrides
 
     class var bundleId: String { fatalError("class var bundleId must be overridden!") }
-    class var appName: String { fatalError("class var appName must be overridden!") }
+    class var appName: LocalizedStringResource { fatalError("class var appName must be overridden!") }
 
     func playPause() throws(MediaAppCommandError) {
         fatalError("func playPause() must be overridden!")

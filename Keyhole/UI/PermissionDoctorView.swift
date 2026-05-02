@@ -173,8 +173,8 @@ struct PermissionDoctorView: View {
                                 .frame(width: 48.0)
                                 .padding(.horizontal, 8.0)
                             VStack(alignment: .leading, spacing: 8.0) {
-                                Text(verbatim: state.appName).bold()
-                                Text(.permissionDoctorAppAutomationText(appName: state.appName))
+                                Text(state.appName).bold()
+                                Text(.permissionDoctorAppAutomationText(appName: String(localized: state.appName)))
                                     .font(.system(size: 11.0))
                                 PermissionGrantView(status: state.grantStatus,
                                                     grantButtonTitle: .permissionDoctorGrantPermissionButtonTitle,

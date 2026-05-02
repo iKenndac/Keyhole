@@ -107,8 +107,8 @@ struct SettingsView: View {
                         }
                     }
 
-                    SettingsRow(.targetNotRunningSettingTitle(appName: mediaKeyController.preferredTarget.appName)) {
-                        Picker(.targetNotRunningSettingTitle(appName: mediaKeyController.preferredTarget.appName), selection: $mediaKeyController.targetNotRunningAction) {
+                    SettingsRow(.targetNotRunningSettingTitle(appName: String(localized: mediaKeyController.preferredTarget.appName))) {
+                        Picker(.targetNotRunningSettingTitle(appName: String(localized: mediaKeyController.preferredTarget.appName)), selection: $mediaKeyController.targetNotRunningAction) {
                             ForEach(TargetNotRunningAction.allCases) {
                                 Text($0.localizedDisplayValue)
                             }
@@ -135,16 +135,17 @@ struct SettingsView: View {
                         }
 
                         ForEach(mediaKeyController.appStates) { appState in
+                            let localizedAppName: String = String(localized: appState.appName)
                             let (imageName, color, label): (String, Color, LocalizedStringResource) = {
                                 switch appState.state {
                                 case .notRunning:
-                                    return ("questionmark.circle.fill", .gray.opacity(0.6), .automationPermissionNotRunningTitle(appName: appState.appName))
+                                    return ("questionmark.circle.fill", .gray.opacity(0.6), .automationPermissionNotRunningTitle(appName: localizedAppName))
                                 case .runningWithDeniedAutomationAccess:
-                                    return ("xmark.circle.fill", .red, .automationPermissionTitle(appName: appState.appName))
+                                    return ("xmark.circle.fill", .red, .automationPermissionTitle(appName: localizedAppName))
                                 case .runningWithPendingAutomationAccess:
-                                    return ("questionmark.circle.fill", .gray.opacity(0.6), .automationPermissionTitle(appName: appState.appName))
+                                    return ("questionmark.circle.fill", .gray.opacity(0.6), .automationPermissionTitle(appName: localizedAppName))
                                 case .runningWithAutomationAccess:
-                                    return ("checkmark.circle.fill", .green, .automationPermissionTitle(appName: appState.appName))
+                                    return ("checkmark.circle.fill", .green, .automationPermissionTitle(appName: localizedAppName))
                                 }
                             }()
 

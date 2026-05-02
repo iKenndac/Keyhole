@@ -56,7 +56,7 @@ struct DanielsSettingsView: View {
         .scrollDisabled(true)
         .controlSize(.regular)
         .font(.system(size: 13.0))
-        .frame(width: 400.0)
+        .frame(width: 450.0)
         .formStyle(.grouped)
         .onChange(of: targetMusicRepeatMode, { _, new in
             UserDefaults.standard.setValue(new, for: .musicAppTargetRepeatMode)

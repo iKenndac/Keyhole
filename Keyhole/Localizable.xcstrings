@@ -240,6 +240,23 @@
         }
       }
     },
+    "CogAppName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cog"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cog"
+          }
+        }
+      }
+    },
     "ContinueButtonTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -269,7 +286,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Application Music"
+            "value" : "Application Musique"
           }
         }
       }
@@ -308,6 +325,23 @@
         }
       }
     },
+    "DopplerAppName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doppler"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doppler"
+          }
+        }
+      }
+    },
     "EnableKeyholeSettingTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -337,7 +371,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'application Music d'Apple a tendance à désactiver la répétition de son propre chef, ce que l'auteur de cette application trouve extrêmement ennuyeux.\n\nLorsque cette option est activée, Keyhole vérifiera périodiquement le réglage de répétition de Music et le rétablira à la valeur souhaitée."
+            "value" : "L'application Musique d'Apple a tendance à désactiver la répétition de son propre chef, ce que l'auteur de cette application trouve extrêmement ennuyeux.\n\nLorsque cette option est activée, Keyhole vérifiera périodiquement le réglage de répétition de Musique et le rétablira à la valeur souhaitée."
           }
         }
       }
@@ -427,6 +461,23 @@
         }
       }
     },
+    "MusicAppName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Music"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Musique"
+          }
+        }
+      }
+    },
     "MusicAppRepeatModeFixedStat" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -454,13 +505,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Keyhole a fixé le paramètre de répétition de Music %(fixCount)lld fois."
+                  "value" : "Keyhole a fixé le paramètre de répétition de Musique %(fixCount)lld fois."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Keyhole a fixé le paramètre de répétition de Music %(fixCount)lld fois."
+                  "value" : "Keyhole a fixé le paramètre de répétition de Musique %(fixCount)lld fois."
                 }
               }
             }
@@ -740,6 +791,23 @@
         }
       }
     },
+    "RadiccioAppName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radiccio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radiccio"
+          }
+        }
+      }
+    },
     "RepeatModeAll" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -855,6 +923,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Afficher l’assistant d’autorisations…"
+          }
+        }
+      }
+    },
+    "SpotifyAppName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spotify"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spotify"
           }
         }
       }

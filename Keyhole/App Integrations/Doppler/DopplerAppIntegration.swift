@@ -5,7 +5,7 @@ import ScriptingBridge
 @MainActor @Observable class DopplerAppIntegration: ScriptableAppIntegration<DopplerApplication> {
 	
 	override class var bundleId: String { return "co.brushedtype.doppler-macos" }
-	override class var appName: String { return "Doppler" }
+    override class var appName: LocalizedStringResource { return .dopplerAppName }
 	
 	override func playPause() throws(MediaAppCommandError) {
 		try scriptableApp().playpause?()

@@ -26,10 +26,10 @@ enum MediaAppCommandError: Error {
 protocol MediaAppIntegration: AnyObject {
 
     static var bundleId: String { get }
-    static var appName: String { get }
+    static var appName: LocalizedStringResource { get }
     var bundleId: String { get }
     var isInstalled: Bool { get }
-    var appName: String { get }
+    var appName: LocalizedStringResource { get }
 
     @ObservationTracked var appState: MediaAppState { get }
     func addStateObserver(_ observer: @escaping MediaAppStateChangedObserver) -> MediaAppStateObservationToken

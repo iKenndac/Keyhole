@@ -19,7 +19,7 @@ extension UserDefaultsKey {
 @MainActor @Observable class MusicAppIntegration: ScriptableAppIntegration<MusicApplication> {
 
     override class var bundleId: String { return "com.apple.Music" }
-    override class var appName: String { return "Music" }
+    override class var appName: LocalizedStringResource { return .musicAppName }
 
     override init() {
         super.init()

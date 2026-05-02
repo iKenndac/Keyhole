@@ -44,7 +44,7 @@ extension UserDefaultsKey {
         integrations = [
             MusicAppIntegration(), SpotifyAppIntegration(), DopplerAppIntegration(), CogAppIntegration(),
             RadiccioAppIntegration()
-        ].sorted(by: { $0.appName.caseInsensitiveCompare($1.appName) == .orderedAscending })
+        ].sorted(by: { String(localized: $0.appName).caseInsensitiveCompare(String(localized: $1.appName)) == .orderedAscending })
 
         let preferredBundleId = UserDefaults.standard.value(for: .preferredTargetBundleId)
         let targets = integrations.filter({ $0.isInstalled }).map({ AvailableTarget(appName: $0.appName, bundleId: $0.bundleId) })
@@ -100,8 +100,12 @@ extension UserDefaultsKey {
 
     struct AvailableTarget: Equatable, Hashable, Identifiable {
         var id: String { return bundleId }
-        let appName: String
+        let appName: LocalizedStringResource
         let bundleId: String
+
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(bundleId)
+        }
     }
     
     /// Returns the list of available apps.
@@ -114,8 +118,13 @@ extension UserDefaultsKey {
 
     struct MediaAppDetailsWithState: Equatable, Hashable {
         let bundleId: String
-        let appName: String
+        let appName: LocalizedStringResource
         let state: MediaAppState
+
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(bundleId)
+            hasher.combine(state)
+        }
     }
 
     /// Returns the current automation states for the supported app integrations.
