@@ -15,6 +15,11 @@ struct SettingsView: View {
         openWindow(id: KeyholeApp.WindowId.permissionDoctor)
     }
 
+    private func showDanielsSettings() {
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        openWindow(id: KeyholeApp.WindowId.danielsSettings)
+    }
+
     var body: some View {
         Form {
             Section(content: {
@@ -30,6 +35,8 @@ struct SettingsView: View {
                             NSApplication.shared.activate()
                             openWindow(id: KeyholeApp.WindowId.about)
                         })
+                        Divider()
+                        Button(.showDanielsSettingsMenuTitle, action: showDanielsSettings)
                         Divider()
                         Button(.showPermissionDoctorMenuTitle, action: showPermissionDoctor)
                         Divider()

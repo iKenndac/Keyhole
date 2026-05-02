@@ -11,6 +11,16 @@ extension TargetNotRunningAction {
     }
 }
 
+extension MusicAppIntegration.TargetRepeatMode {
+    var localizedDisplayValue: LocalizedStringResource {
+        switch self {
+        case .off: return .repeatModeOff
+        case .repeatOne: return .repeatModeOne
+        case .repeatAll: return .repeatModeAll
+        }
+    }
+}
+
 extension MediaKeyController.MediaAppDetailsWithState: Identifiable {
     var id: Self { return self }
 }

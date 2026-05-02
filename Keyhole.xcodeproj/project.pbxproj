@@ -39,6 +39,7 @@
 		50C7690B2F1D111A000E5F7D /* MusicAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7690A2F1D1117000E5F7D /* MusicAppIntegration.swift */; };
 		50C769302F1D237A000E5F7D /* ModelUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7692F2F1D2375000E5F7D /* ModelUIExtensions.swift */; };
 		50C769332F1D260C000E5F7D /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C769322F1D260C000E5F7D /* UserDefaultsExtensions.swift */; };
+		50D5CECD2FA6229C00BD3187 /* DanielsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5CECC2FA6229500BD3187 /* DanielsSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		50C7692D2F1D2228000E5F7D /* Shared Settings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Shared Settings.xcconfig"; sourceTree = "<group>"; };
 		50C7692F2F1D2375000E5F7D /* ModelUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUIExtensions.swift; sourceTree = "<group>"; };
 		50C769322F1D260C000E5F7D /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		50D5CECC2FA6229500BD3187 /* DanielsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanielsSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				50C768D62F1D092B000E5F7D /* SettingsView.swift */,
 				502BC93B2F1FF531008C33A3 /* AboutView.swift */,
 				502BC9772F21161B008C33A3 /* PermissionDoctorView.swift */,
+				50D5CECC2FA6229500BD3187 /* DanielsSettingsView.swift */,
 				50C7692F2F1D2375000E5F7D /* ModelUIExtensions.swift */,
 				502BC9972F212C8F008C33A3 /* SwiftUI+Conditions.swift */,
 			);
@@ -366,6 +369,7 @@
 				50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */,
 				509A72B02F37F59800D74B3E /* RadiccioAppIntegration.swift in Sources */,
 				50C769332F1D260C000E5F7D /* UserDefaultsExtensions.swift in Sources */,
+				50D5CECD2FA6229C00BD3187 /* DanielsSettingsView.swift in Sources */,
 				50C768D92F1D092B000E5F7D /* MediaKeyWatcher.swift in Sources */,
 				50C768DA2F1D092B000E5F7D /* App.swift in Sources */,
 				50C768DB2F1D092B000E5F7D /* SettingsView.swift in Sources */,

@@ -6,6 +6,7 @@ struct KeyholeApp: App {
     struct WindowId {
         static let about = "about"
         static let permissionDoctor = "permission-doctor"
+        static let danielsSettings = "daniels-settings"
     }
 
     let mediaKeyController: MediaKeyController
@@ -59,6 +60,20 @@ struct KeyholeApp: App {
         Window(.aboutWindowTitle, id: WindowId.about) {
             AboutView()
                 .toolbar(removing: .title)
+                .toolbarBackground(.hidden, for: .windowToolbar)
+                .containerBackground(.regularMaterial, for: .window)
+                .windowMinimizeBehavior(.disabled)
+                .windowFullScreenBehavior(.disabled)
+        }
+        .defaultLaunchBehavior(.suppressed)
+        .windowBackgroundDragBehavior(.enabled)
+        .windowResizability(.contentSize)
+        .restorationBehavior(.disabled)
+        .windowManagerRole(.associated)
+        .windowLevel(.floating)
+
+        Window(.danielsSettingsWindowTitle, id: WindowId.danielsSettings) {
+            DanielsSettingsView()
                 .toolbarBackground(.hidden, for: .windowToolbar)
                 .containerBackground(.regularMaterial, for: .window)
                 .windowMinimizeBehavior(.disabled)

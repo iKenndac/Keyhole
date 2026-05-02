@@ -257,6 +257,28 @@
         }
       }
     },
+    "DanielsSettingsMusicAppSectionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Music App"
+          }
+        }
+      }
+    },
+    "DanielsSettingsWindowTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daniel’s Settings"
+          }
+        }
+      }
+    },
     "DismissButtonTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -287,6 +309,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Activer Keyhole"
+          }
+        }
+      }
+    },
+    "FixMusicAppRepeatSettingFooter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple's Music app has a tendency to switch off repeat on its own volition, which this app's author finds extremely annoying.\n\nWith this enabled, Keyhole will periodically check Music's repeat setting and change it back to the target value."
+          }
+        }
+      }
+    },
+    "FixMusicAppRepeatSettingTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fix Music’s repeat setting"
+          }
+        }
+      }
+    },
+    "FixMusicAppRepeatTargetSettingTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Target repeat setting"
           }
         }
       }
@@ -338,6 +393,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gestion des touches multimédia"
+          }
+        }
+      }
+    },
+    "MusicAppRepeatModeFixedStat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Keyhole has fixed Music’s repeat setting %1$(fixCount)lld time."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Keyhole has fixed Music’s repeat setting %1$(fixCount)lld times."
+                }
+              }
+            }
           }
         }
       }
@@ -614,6 +692,39 @@
         }
       }
     },
+    "RepeatModeAll" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeat All"
+          }
+        }
+      }
+    },
+    "RepeatModeOff" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeat Off"
+          }
+        }
+      }
+    },
+    "RepeatModeOne" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repeat One"
+          }
+        }
+      }
+    },
     "SettingsSectionTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -627,6 +738,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Réglages"
+          }
+        }
+      }
+    },
+    "ShowDanielsSettingsMenuTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daniel’s Settings…"
           }
         }
       }

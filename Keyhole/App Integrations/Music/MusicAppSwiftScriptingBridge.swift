@@ -23,16 +23,36 @@ extension SBApplication: MusicApplication {}
     @objc optional func stop() // stop playback
 }
 
-@objc public enum /*MusicEPlS*/ MusicPlayerState: AEKeyword {
+@objc public enum /*MusicEPlS*/ MusicPlayerState: AEKeyword, CustomStringConvertible {
     case /*MusicEPlS*/ stopped = 0x6b505353 // 'kPSS'
     case /*MusicEPlS*/ playing = 0x6b505350 // 'kPSP'
     case /*MusicEPlS*/ paused = 0x6b505370 // 'kPSp'
     case /*MusicEPlS*/ fastForwarding = 0x6b505346 // 'kPSF'
     case /*MusicEPlS*/ rewinding = 0x6b505352 // 'kPSR'
+
+    public var description: String {
+        switch self {
+        case .stopped: return "stopped"
+        case .playing: return "playing"
+        case .paused: return "paused"
+        case .fastForwarding: return "fastForwarding"
+        case .rewinding: return "rewinding"
+        @unknown default: return "MusicPlayerState(rawValue: \(rawValue))"
+        }
+    }
 }
 
-@objc public enum /*MusicERpt*/ MusicRepeatState: AEKeyword {
+@objc public enum /*MusicERpt*/ MusicRepeatState: AEKeyword, CustomStringConvertible {
     case /*MusicERptOff*/ repeatOff = 0x6b52704f // 'kRpO'
     case /*MusicERptOne*/ repeatOne = 0x6b527031 //'kRp1'
     case /*MusicERptAll*/ repeatAll = 0x6b416c6c // 'kAll'
+
+    public var description: String {
+        switch self {
+        case .repeatOff: return "repeatOff"
+        case .repeatOne: return "repeatOne"
+        case .repeatAll: return "repeatAll"
+        @unknown default: return "MusicRepeatState(rawValue: \(rawValue))"
+        }
+    }
 }
