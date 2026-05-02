@@ -160,7 +160,12 @@ struct SettingsView: View {
         .scrollDisabled(true)
         .controlSize(.small)
         .font(.system(size: 11.0))
-        .frame(width: 320.0) // If it was good enough for the original iPhone, it's good enough for us!
+        .frame(width: 350.0)
+        // ↑ I don't really like this - 320.0 is fine for English, but not for French. However, if we let SwiftUI
+        // autosize, the UI will resize kinda jankily when menu items are changed, since we can't measure the longest
+        // width of a popup menu until that value is chosen (and measuring in SwiftUI is harder than in AppKit).
+        // I'd like the window to be "the smallest it can be so it doesn't have to resize as the user changes settings",
+        // which I don't *think* we can do easily without hardcoding widths.
         .formStyle(.grouped)
         // Being a menu extra means the app doesn't come frontmost when the UI is shown, so we need to help out a bit
         .onAppear { mediaKeyController.noteUIShown() }
