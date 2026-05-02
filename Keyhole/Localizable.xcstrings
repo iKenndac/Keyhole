@@ -265,6 +265,12 @@
             "state" : "translated",
             "value" : "Music App"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Application Music"
+          }
         }
       }
     },
@@ -275,6 +281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Daniel’s Settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres de Daniel"
           }
         }
       }
@@ -321,6 +333,12 @@
             "state" : "translated",
             "value" : "Apple's Music app has a tendency to switch off repeat on its own volition, which this app's author finds extremely annoying.\n\nWith this enabled, Keyhole will periodically check Music's repeat setting and change it back to the target value."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'application Music d'Apple a tendance à désactiver la répétition de son propre chef, ce que l'auteur de cette application trouve extrêmement ennuyeux.\n\nLorsque cette option est activée, Keyhole vérifiera périodiquement le réglage de répétition de Music et le rétablira à la valeur souhaitée."
+          }
         }
       }
     },
@@ -332,6 +350,12 @@
             "state" : "translated",
             "value" : "Fix Music’s repeat setting"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglage de répétition"
+          }
         }
       }
     },
@@ -342,6 +366,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Target repeat setting"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètre de répétition de cible"
           }
         }
       }
@@ -413,6 +443,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Keyhole has fixed Music’s repeat setting %1$(fixCount)lld times."
+                }
+              }
+            }
+          }
+        },
+        "fr" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Keyhole a fixé le paramètre de répétition de Music %(fixCount)lld fois."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Keyhole a fixé le paramètre de répétition de Music %(fixCount)lld fois."
                 }
               }
             }
@@ -700,6 +748,12 @@
             "state" : "translated",
             "value" : "Repeat All"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Répéter Tout"
+          }
         }
       }
     },
@@ -711,6 +765,12 @@
             "state" : "translated",
             "value" : "Repeat Off"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Répéter Hors"
+          }
         }
       }
     },
@@ -721,6 +781,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repeat One"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Répéter Un"
           }
         }
       }
@@ -749,6 +815,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Daniel’s Settings…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres de Daniel…"
           }
         }
       }
