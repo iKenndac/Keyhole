@@ -18,7 +18,7 @@ It's important to note that Keyhole's open-source license **does not** extend to
 
 ### Help Wanted: Translations
 
-Keynote currently supports English. If you'd like to support Keyhole by adding your language, that'd be wonderful! Most of the app's strings are in the `Localizable.xcstrings` file in the project, and I'll happily merge pull requests adding a new language. 
+Keynote currently supports English and French. If you'd like to support Keyhole by adding your language, that'd be wonderful! Most of the app's strings are in the `Localizable.xcstrings` file in the project, and I'll happily merge pull requests adding a new language. 
 
 If you'd like to help but don't know what those words mean, [open up an issue](https://github.com/iKenndac/Keyhole/issues) and I can help you get started.
 
