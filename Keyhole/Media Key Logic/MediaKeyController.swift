@@ -43,7 +43,7 @@ extension UserDefaultsKey {
     init() {
         integrations = [
             MusicAppIntegration(), SpotifyAppIntegration(), DopplerAppIntegration(), CogAppIntegration(),
-            RadiccioAppIntegration()
+            RadiccioAppIntegration(), LongplayAppIntegration()
         ].sorted(by: { String(localized: $0.appName).caseInsensitiveCompare(String(localized: $1.appName)) == .orderedAscending })
 
         let preferredBundleId = UserDefaults.standard.value(for: .preferredTargetBundleId)

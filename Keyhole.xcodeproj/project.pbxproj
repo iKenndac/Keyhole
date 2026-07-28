@@ -24,6 +24,8 @@
 		502BC9782F211621008C33A3 /* PermissionDoctorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC9772F21161B008C33A3 /* PermissionDoctorView.swift */; };
 		502BC9982F212C8F008C33A3 /* SwiftUI+Conditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502BC9972F212C8F008C33A3 /* SwiftUI+Conditions.swift */; };
 		507B79E62F23A798006C628C /* Keyhole.icon in Resources */ = {isa = PBXBuildFile; fileRef = 507B79E52F23A798006C628C /* Keyhole.icon */; };
+		508827213018FE1C00AC44C0 /* LongplaySwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508827203018FE1C00AC44C0 /* LongplaySwiftScriptingBridge.swift */; };
+		508827233018FEBE00AC44C0 /* LongplayAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508827223018FEBE00AC44C0 /* LongplayAppIntegration.swift */; };
 		509A72AE2F37F49800D74B3E /* RadiccioSwiftScriptingBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A72AD2F37F49800D74B3E /* RadiccioSwiftScriptingBridge.swift */; };
 		509A72B02F37F59800D74B3E /* RadiccioAppIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509A72AF2F37F59800D74B3E /* RadiccioAppIntegration.swift */; };
 		50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C768D12F1D092B000E5F7D /* MediaKeyController.swift */; };
@@ -63,6 +65,9 @@
 		502BC9972F212C8F008C33A3 /* SwiftUI+Conditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+Conditions.swift"; sourceTree = "<group>"; };
 		507B79E42F2290F4006C628C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		507B79E52F23A798006C628C /* Keyhole.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Keyhole.icon; sourceTree = "<group>"; };
+		5088271F3018FE0800AC44C0 /* Longplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Longplay.h; sourceTree = "<group>"; };
+		508827203018FE1C00AC44C0 /* LongplaySwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongplaySwiftScriptingBridge.swift; sourceTree = "<group>"; };
+		508827223018FEBE00AC44C0 /* LongplayAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongplayAppIntegration.swift; sourceTree = "<group>"; };
 		509A72AC2F37F49500D74B3E /* Radiccio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Radiccio.h; sourceTree = "<group>"; };
 		509A72AD2F37F49800D74B3E /* RadiccioSwiftScriptingBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiccioSwiftScriptingBridge.swift; sourceTree = "<group>"; };
 		509A72AF2F37F59800D74B3E /* RadiccioAppIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiccioAppIntegration.swift; sourceTree = "<group>"; };
@@ -127,6 +132,16 @@
 				502BC90D2F1E2776008C33A3 /* SpotifyAppIntegration.swift */,
 			);
 			path = Spotify;
+			sourceTree = "<group>";
+		};
+		5088271E3018FD5500AC44C0 /* Longplay */ = {
+			isa = PBXGroup;
+			children = (
+				5088271F3018FE0800AC44C0 /* Longplay.h */,
+				508827203018FE1C00AC44C0 /* LongplaySwiftScriptingBridge.swift */,
+				508827223018FEBE00AC44C0 /* LongplayAppIntegration.swift */,
+			);
+			path = Longplay;
 			sourceTree = "<group>";
 		};
 		509A72AB2F37F48000D74B3E /* Radiccio */ = {
@@ -205,6 +220,7 @@
 				502BC90F2F1E281F008C33A3 /* ScriptableAppIntegration.swift */,
 				50203B082F265100001A4D3A /* Cog */,
 				50203B052F264D44001A4D3A /* Doppler */,
+				5088271E3018FD5500AC44C0 /* Longplay */,
 				50C768E32F1D0C6B000E5F7D /* Music */,
 				509A72AB2F37F48000D74B3E /* Radiccio */,
 				502BC9092F1E264F008C33A3 /* Spotify */,
@@ -360,10 +376,12 @@
 				50203B0B2F265119001A4D3A /* CogAppIntegration.swift in Sources */,
 				50C769092F1D0DAE000E5F7D /* MusicAppSwiftScriptingBridge.swift in Sources */,
 				502BC93A2F1FF073008C33A3 /* Logging.swift in Sources */,
+				508827213018FE1C00AC44C0 /* LongplaySwiftScriptingBridge.swift in Sources */,
 				50C769302F1D237A000E5F7D /* ModelUIExtensions.swift in Sources */,
 				50C768E22F1D0C4F000E5F7D /* MediaAppIntegration.swift in Sources */,
 				50C769062F1D0CCB000E5F7D /* ScriptingBridgeSession.swift in Sources */,
 				502BC90C2F1E2668008C33A3 /* SpotifySwiftScriptingBridge.swift in Sources */,
+				508827233018FEBE00AC44C0 /* LongplayAppIntegration.swift in Sources */,
 				502BC9102F1E281F008C33A3 /* ScriptableAppIntegration.swift in Sources */,
 				502BC90E2F1E2776008C33A3 /* SpotifyAppIntegration.swift in Sources */,
 				50C768D82F1D092B000E5F7D /* MediaKeyController.swift in Sources */,

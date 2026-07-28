@@ -444,6 +444,23 @@
         }
       }
     },
+    "LongplayAppName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longplay"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Longplay"
+          }
+        }
+      }
+    },
     "MediaKeyHandlingSectionTitle" : {
       "extractionState" : "manual",
       "localizations" : {
