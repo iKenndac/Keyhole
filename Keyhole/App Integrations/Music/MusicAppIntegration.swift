@@ -28,6 +28,8 @@ extension UserDefaultsKey {
 
     @MainActor deinit {
         teardownDistributedNotifications()
+        repeatStateCheckTask?.cancel()
+        repeatStateCheckTask = nil
     }
 
     override func playPause() throws(MediaAppCommandError) {
@@ -88,6 +90,8 @@ extension UserDefaultsKey {
         notificationDebounceSubject.send(notification)
     }
 
+    private var repeatStateCheckTask: Task<Void, Never>? = nil
+
     private func updateRepeatState(from notification: Notification) {
         // We only want to futz with the Music app if the user wants us to, we have scripting permission and the app
         // is running, if we can get at the player state, and the Music app is "settled" in a playing state (i.e.,
@@ -105,8 +109,25 @@ extension UserDefaultsKey {
             nsApp.setValue(targetRepeatState.rawValue, forKey: "songRepeat")
             // ^ https://forums.swift.org/t/compilation-error-in-assigning-to-obj-c-optional-protocol-property/53886
 
-            let existingFixCount: Int = UserDefaults.standard.value(for: .musicAppRepeatModeFixCount)
-            UserDefaults.standard.setValue(max(existingFixCount, 0) + 1, for: .musicAppRepeatModeFixCount)
+            repeatStateCheckTask?.cancel()
+            repeatStateCheckTask = Task { @MainActor in
+                do {
+                    // This sleep will catch cancellations.
+                    try await Task.sleep(for: .seconds(1))
+                    guard let app = try? scriptableApp() else { return }
+                    guard let repeatState = app.songRepeat else { return }
+
+                    if repeatState != targetRepeatState {
+                        LogInfo("Music app's repeat state (\(repeatState)) *still* isn't what we want (\(targetRepeatState)). Maybe it's streaming?")
+                    } else {
+                        LogInfo("Music app's repeat state fixed!")
+                        let existingFixCount: Int = UserDefaults.standard.value(for: .musicAppRepeatModeFixCount)
+                        UserDefaults.standard.setValue(max(existingFixCount, 0) + 1, for: .musicAppRepeatModeFixCount)
+                    }
+
+                    repeatStateCheckTask = nil
+                } catch {}
+            }
         }
     }
 }
