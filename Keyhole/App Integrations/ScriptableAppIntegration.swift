@@ -20,6 +20,8 @@ import AppKit
         updateAppState(with: scriptableAppBridge.sessionState)
     }
 
+    deinit {}
+
     // MARK: - Overrides
 
     class var bundleId: String { fatalError("class var bundleId must be overridden!") }
